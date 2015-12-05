@@ -1,0 +1,57 @@
+// 
+// Requirement
+// 
+// **************************************************
+
+@import "../../bower_components/susy/sass/susy";
+
+
+
+// 
+// Settings
+// 
+// **************************************************
+
+$susy: (
+	// Element flow direction: rtl | ltr
+	flow: ltr,
+	// Calculated output values: fluid | static
+	math: fluid,
+	// Output layout technique: float | isolate
+	output: float,
+	// Max-width of containing element: <length> | auto
+	container: auto,
+	// Container relative alignment: left | center | right | <length> [*2]
+	container-position: center,
+	// Column count and arrangement: <number> | <list>
+	columns: 4,
+	// Gutter width relative to columns: <ratio>
+	gutters: .25,
+	// Optional explicit width of column: <length> | false/null
+	column-width: false,
+	// How and where gutters are layout: before | after | split | inside | inside-static
+	gutter-position: after,
+	// Global box model: border-box | content-box
+	global-box-sizing: content-box,
+	// Float direction of last element: from | to
+	last-flow: to,
+	// Control debugging environment
+	debug: (
+		// Grid images toggle: show | hide | show-columns | show-baseline
+		image: hide,
+		// Image output: background | overlay
+		output: background,
+		// Toggle position: right | left and top | bottom
+		toggle: top right,
+		// Color of generated grid: <color>
+		color: rgba(#66f, .25),
+	),
+	// Custom Support: <boolean>
+	use-custom: (
+		clearfix: false,
+		background-image: true,
+		background-options: false,
+		box-sizing: true,
+		rem: true,
+	)
+);
