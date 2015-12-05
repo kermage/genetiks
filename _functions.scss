@@ -1,0 +1,119 @@
+// ==================================================
+// TABLE OF CONTENTS
+// --------------------------------------------------
+//	* Pseudo
+//	* Unicode
+//	* Strip unit
+//	* Conversion
+//		- Pixel to em
+//		- Pixel to rem
+//	* Color
+//		- Mix amount of black
+//		- Mix amount of white
+//		- Add transparency
+// ==================================================
+
+
+
+// 
+// Add pseudo element to values in list
+// 
+// **************************************************
+
+@function pseudo( $values, $element ) {
+	$list: ();
+	
+	@each $value in $values {
+		$value: $value + ":" + $element;
+		$list: append( $list, $value, comma );
+	}
+	
+	@return $list;
+}
+
+
+
+// 
+// Prevent unicode character conversion
+// 
+// **************************************************
+
+@function unicode( $string ) {
+	@return unquote( "\"" ) + unquote( str-insert( $string, "\\", 1 ) ) + unquote( "\"" );
+}
+
+
+
+// 
+// Strip unit from a number
+// 
+// **************************************************
+
+@function strip-unit( $value ) {
+	@return $value / ( $value * 0 + 1 );
+}
+
+
+
+// 
+// Conversion
+// 
+// **************************************************
+
+
+// 
+// Pixel to em
+// 
+
+@function em( $value, $base: $em-base ) {
+	$value: strip-unit( $value );
+	$base: strip-unit( $base );
+	
+	@return $value / $base * 1em;
+}
+
+
+// 
+// Pixel to rem
+// 
+
+@function rem($value, $base: $rem-base) {
+	$value: strip-unit( $value );
+	$base: strip-unit( $base );
+	
+	@return $value / $base * 1rem;
+}
+
+
+
+// 
+// Color
+// 
+// **************************************************
+
+
+// 
+// Mix amount of black
+// 
+
+@function shade( $color, $percent: 50% ) {
+	@return mix( #000, $color, $percent );
+}
+
+
+// 
+// Mix amount of white
+// 
+
+@function tint( $color, $percent: 50% ) {
+	@return mix( #fff, $color, $percent );
+}
+
+
+//
+// Add an alpha transparency value
+//
+
+@function transparent( $color: $white, $alpha: 0.5 ) {
+	@return hsla( hue( $color ), saturation( $color ), lightness( $color ), $alpha );
+}
