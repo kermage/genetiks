@@ -3,6 +3,7 @@
 // --------------------------------------------------
 //	* Unit base
 //	* Breakpoints
+//	* Scafolding
 // ==================================================
 
 
@@ -26,3 +27,15 @@ $small:		em( 480px )		!default;
 $medium:	em( 768px )		!default;
 $large:		em( 980px )		!default;
 $xlarge:	em( 1200px )	!default;
+
+
+
+// 
+// Scafolding
+// 
+// **************************************************
+
+$global-background:	#f3f3f3		!default;
+$global-color:		#848484		!default;
+$global-spacing:	rem( 20px )	!default;
+$global-radius:		3px			!default;
