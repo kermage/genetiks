@@ -11,6 +11,7 @@
 //		- Mix amount of black
 //		- Mix amount of white
 //		- Add transparency
+//		- Retrieve material ui color
 // ==================================================
 
 
@@ -114,6 +115,17 @@
 // Add an alpha transparency value
 //
 
-@function transparent( $color: $white, $alpha: 0.5 ) {
+@function transparent( $color, $alpha: 0.5 ) {
 	@return hsla( hue( $color ), saturation( $color ), lightness( $color ), $alpha );
+}
+
+
+//
+// Retrieve material ui color value from map
+//
+
+@function mui-color( $name, $variant: '500' ) {
+	$name: quote( $name );
+	$variant: quote( $variant );
+	@return map-get( map-get( $mui-colors, $name ), $variant );
 }
