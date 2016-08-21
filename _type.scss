@@ -1,0 +1,37 @@
+/* Typography
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-color;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin-top: $global-spacing * 1.25;
+    margin-bottom: $global-spacing * 0.75;
+}
+
+@each $heading, $font-size in $heading-sizes {
+    #{$heading}, .#{$heading} {
+        font-size: $font-size;
+    }
+}
+
+p {
+    line-height: $global-line-height;
+    margin: 0 0 $global-spacing * 0.5;
+}
+
+a {
+    color: $brand-color;
+    text-decoration: none;
+    
+    &:hover {
+        color: shade($brand-color, 20);
+        text-decoration: underline;
+    }
+}
