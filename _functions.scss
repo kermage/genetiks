@@ -1,17 +1,17 @@
 // ==================================================
 // TABLE OF CONTENTS
 // --------------------------------------------------
-//	* Pseudo
-//	* Unicode
-//	* Strip unit
-//	* Conversion
-//		- Pixel to em
-//		- Pixel to rem
-//	* Color
-//		- Mix amount of black
-//		- Mix amount of white
-//		- Add transparency
-//		- Retrieve material ui color
+//  * Pseudo
+//  * Unicode
+//  * Strip unit
+//  * Conversion
+//      - Pixel to em
+//      - Pixel to rem
+//  * Color
+//      - Mix amount of black
+//      - Mix amount of white
+//      - Add transparency
+//      - Retrieve material ui color
 // ==================================================
 
 
@@ -22,14 +22,14 @@
 // **************************************************
 
 @function pseudo( $values, $element ) {
-	$list: ();
-	
-	@each $value in $values {
-		$value: $value + ":" + $element;
-		$list: append( $list, $value, comma );
-	}
-	
-	@return $list;
+    $list: ();
+    
+    @each $value in $values {
+        $value: $value + ":" + $element;
+        $list: append( $list, $value, comma );
+    }
+    
+    @return $list;
 }
 
 
@@ -40,7 +40,7 @@
 // **************************************************
 
 @function unicode( $string ) {
-	@return unquote( "\"" ) + unquote( str-insert( $string, "\\", 1 ) ) + unquote( "\"" );
+    @return unquote( "\"" ) + unquote( str-insert( $string, "\\", 1 ) ) + unquote( "\"" );
 }
 
 
@@ -51,7 +51,7 @@
 // **************************************************
 
 @function strip-unit( $value ) {
-	@return $value / ( $value * 0 + 1 );
+    @return $value / ( $value * 0 + 1 );
 }
 
 
@@ -67,10 +67,10 @@
 // 
 
 @function em( $value, $base: $em-base ) {
-	$value: strip-unit( $value );
-	$base: strip-unit( $base );
-	
-	@return $value / $base * 1em;
+    $value: strip-unit( $value );
+    $base: strip-unit( $base );
+    
+    @return $value / $base * 1em;
 }
 
 
@@ -79,10 +79,10 @@
 // 
 
 @function rem($value, $base: $rem-base) {
-	$value: strip-unit( $value );
-	$base: strip-unit( $base );
-	
-	@return $value / $base * 1rem;
+    $value: strip-unit( $value );
+    $base: strip-unit( $base );
+    
+    @return $value / $base * 1rem;
 }
 
 
@@ -98,7 +98,7 @@
 // 
 
 @function shade( $color, $percent: 50% ) {
-	@return mix( #000, $color, $percent );
+    @return mix( #000, $color, $percent );
 }
 
 
@@ -107,7 +107,7 @@
 // 
 
 @function tint( $color, $percent: 50% ) {
-	@return mix( #fff, $color, $percent );
+    @return mix( #fff, $color, $percent );
 }
 
 
@@ -116,7 +116,7 @@
 //
 
 @function transparent( $color, $alpha: 0.5 ) {
-	@return hsla( hue( $color ), saturation( $color ), lightness( $color ), $alpha );
+    @return hsla( hue( $color ), saturation( $color ), lightness( $color ), $alpha );
 }
 
 
@@ -125,7 +125,7 @@
 //
 
 @function mui-color( $name, $variant: '500' ) {
-	$name: quote( $name );
-	$variant: quote( $variant );
-	@return map-get( map-get( $mui-colors, $name ), $variant );
+    $name: quote( $name );
+    $variant: quote( $variant );
+    @return map-get( map-get( $mui-colors, $name ), $variant );
 }

@@ -3,23 +3,23 @@
 
 // Set box-sizing globally
 html {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 // Inherit box-sizing
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 // Opinionated defaults
 body {
-	background: $global-background;
-	color: $global-color;
-	
-	font-family: $global-font-family;
-	font-size: $global-font-size;
-	font-weight: $global-font-weight;
-	line-height: $global-line-height;
+    background: $global-background;
+    color: $global-color;
+    
+    font-family: $global-font-family;
+    font-size: $global-font-size;
+    font-weight: $global-font-weight;
+    line-height: $global-line-height;
 }

@@ -1,12 +1,12 @@
 // ==================================================
 // TABLE OF CONTENTS
 // --------------------------------------------------
-//	* Unit base
-//	* Breakpoints
-//	* Styles
-// 		- Base
-// 		- Typography
-// 		- Headings
+//  * Unit base
+//  * Breakpoints
+//  * Styles
+//      - Base
+//      - Typography
+//      - Headings
 // ==================================================
 
 
@@ -16,8 +16,8 @@
 // 
 // **************************************************
 
-$em-base:	16px	!default;
-$rem-base:	16px	!default;
+$em-base:   16px    !default;
+$rem-base:  16px    !default;
 
 
 
@@ -26,10 +26,10 @@ $rem-base:	16px	!default;
 // 
 // **************************************************
 
-$small:		em( 480px )		!default;
-$medium:	em( 768px )		!default;
-$large:		em( 980px )		!default;
-$xlarge:	em( 1200px )	!default;
+$small:     em( 480px )     !default;
+$medium:    em( 768px )     !default;
+$large:     em( 980px )     !default;
+$xlarge:    em( 1200px )    !default;
 
 
 
@@ -43,18 +43,18 @@ $xlarge:	em( 1200px )	!default;
 // Base
 // 
 
-$global-background:	#f3f3f3		!default;
-$global-color:		#848484		!default;
-$global-spacing:	rem( 20px )	!default;
-$global-radius:		3px			!default;
+$global-background: #f3f3f3     !default;
+$global-color:      #848484     !default;
+$global-spacing:    rem( 20px ) !default;
+$global-radius:     3px         !default;
 
 
 // 
 // Typography
 // 
 
-$global-font-family:	'Open Sans', sans-serif !default;
+$global-font-family:    'Open Sans', sans-serif !default;
 // Use 100% by default to inherit the value from the user's browser settings
-$global-font-size:		100%	!default;
-$global-font-weight:	400		!default;
-$global-line-height:	1.5		!default;
+$global-font-size:      100%    !default;
+$global-font-weight:    400     !default;
+$global-line-height:    1.5     !default;
