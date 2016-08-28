@@ -35,3 +35,53 @@ a {
         text-decoration: underline;
     }
 }
+
+blockquote, q {
+    quotes: "\201C""\201D""\2018""\2019";
+    position: relative;
+}
+
+blockquote {
+    background: $white;
+    border: solid $brand-color;
+    border-width: 0 1px 0 5px;
+    border-radius: $global-radius;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.125);
+    margin: $global-spacing 0;
+    padding: $global-spacing $global-spacing $global-spacing $global-spacing * 2;
+    text-align: justify;
+    
+    &:before{
+        content: "\201C";
+        position: absolute;
+        margin-top: -15px;
+        left: 10px;
+        color: $gray;
+        font-family: Georgia, serif;
+        font-size: em( 60px );
+        font-weight: bold;
+    }
+}
+
+q {
+    padding: 0 $global-spacing * 0.5;
+    
+    &:before, &:after {
+        font-family: Georgia, serif;
+        font-size: $global-font-size * 1.75;
+        position: absolute;
+        margin-top: -7.5px;
+    }
+    
+    &:before {
+        left: 0;
+    }
+}
+
+cite {
+    font-size: $global-font-size * 0.875;
+    
+    &:before {
+        content: "\2014";
+    }
+}
