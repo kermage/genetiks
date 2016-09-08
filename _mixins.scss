@@ -163,6 +163,8 @@
 // **************************************************
 
 @mixin selector( $element ) {
+    $selections: ();
+    
     @if( to-lower-case( $element ) == 'placeholder' ) {
         $selections: ":-webkit-input-placeholder" ":-moz-placeholder" "-moz-placeholder" "-ms-input-placeholder";
     }
