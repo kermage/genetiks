@@ -32,7 +32,7 @@
 	// Don't display the URL for images or JavaScript/internal links
 	a[href^="#"]:after,
 	a[href^="javascript:"]:after {
-		content: " ";
+		content: '';
 	}
 
 	// Prevent page breaks in the middle of a blockquote or preformatted text block

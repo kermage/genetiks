@@ -27,8 +27,8 @@
 // **************************************************
 
 @mixin clearfix {
-	&:after {
-		content: " ";
+	&::after {
+		content: '';
 		display: table;
 		clear: both;
 	}
@@ -107,12 +107,10 @@
 		top: 50%;
 		left: 50%;
 		transform: translate( -50%, -50% );
-	}
-	@else if( to-upper-case( $position ) == 'X' ) {
+	} @else if( to-upper-case( $position ) == 'X' ) {
 		left: 50%;
 		transform: translateX( -50% );
-	}
-	@else if( to-upper-case( $position ) == 'Y' ) {
+	} @else if( to-upper-case( $position ) == 'Y' ) {
 		top: 50%;
 		transform: translateY( -50% );
 	}
@@ -136,12 +134,11 @@
 		content: unicode( $icon );
 	}
 
-	font-family: "FontAwesome";
+	font-family: 'FontAwesome';
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
 	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
 }
 
 
@@ -166,10 +163,9 @@
 	$selections: ();
 
 	@if( to-lower-case( $element ) == 'placeholder' ) {
-		$selections: ":-webkit-input-placeholder" ":-moz-placeholder" "-moz-placeholder" "-ms-input-placeholder";
-	}
-	@else if( to-lower-case( $element ) == 'selection' ) {
-		$selections: ":selection" ":-moz-selection";
+		$selections: ':-webkit-input-placeholder' ':-moz-placeholder' '-moz-placeholder' '-ms-input-placeholder';
+	} @else if( to-lower-case( $element ) == 'selection' ) {
+		$selections: ':selection' ':-moz-selection';
 	}
 
 	@each $selection in $selections {
@@ -187,25 +183,22 @@
 // **************************************************
 
 @mixin triangle( $size, $color, $direction ) {
-	content: " ";
+	content: '';
 	display: block;
 	width: 0;
 	height: 0;
 	border: inset $size;
 
-	@if( to-lower-case( $direction ) == up ) {
+	@if( to-lower-case( $direction ) == 'up' ) {
 		border-color: transparent transparent $color;
 		border-bottom-style: solid;
-	}
-	@else if( to-lower-case( $direction ) == down ) {
+	} @else if( to-lower-case( $direction ) == 'down' ) {
 		border-color: $color transparent transparent;
 		border-top-style: solid;
-	}
-	@else if( to-lower-case( $direction ) == left ) {
+	} @else if( to-lower-case( $direction ) == 'left' ) {
 		border-color: transparent $color transparent transparent;
 		border-right-style: solid;
-	}
-	@else if( to-lower-case( $direction ) == right ) {
+	} @else if( to-lower-case( $direction ) == 'right' ) {
 		border-color: transparent transparent transparent $color;
 		border-left-style: solid;
 	}

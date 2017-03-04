@@ -78,7 +78,7 @@
 // Pixel to rem
 //
 
-@function rem($value, $base: $rem-base) {
+@function rem( $value, $base: $rem-base ) {
 	$value: strip-unit( $value );
 	$base: strip-unit( $base );
 
