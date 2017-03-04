@@ -44,8 +44,10 @@
 	margin-bottom: $global-spacing;
 	max-width: 100%;
 
-	img[class*="wp-image-"] {
-		@include center-block;
+	img[class*='wp-image-'] {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.wp-caption-text {

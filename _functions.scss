@@ -25,7 +25,7 @@
 	$list: ();
 
 	@each $value in $values {
-		$value: $value + ":" + $element;
+		$value: $value + ':' + $element;
 		$list: append( $list, $value, comma );
 	}
 
@@ -40,7 +40,7 @@
 // **************************************************
 
 @function unicode( $string ) {
-	@return unquote( "\"" ) + unquote( str-insert( $string, "\\", 1 ) ) + unquote( "\"" );
+	@return unquote( '"' ) + unquote( str-insert( $string, '\\', 1 ) ) + unquote( '"' );
 }
 
 
