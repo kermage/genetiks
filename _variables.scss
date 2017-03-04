@@ -14,9 +14,9 @@
 
 
 
-// 
+//
 // Unit base
-// 
+//
 // **************************************************
 
 $em-base:   16px    !default;
@@ -24,9 +24,9 @@ $rem-base:  16px    !default;
 
 
 
-// 
+//
 // Breakpoints
-// 
+//
 // **************************************************
 
 $small:     em( 480px )     !default;
@@ -36,15 +36,15 @@ $xlarge:    em( 1200px )    !default;
 
 
 
-// 
+//
 // Styles
-// 
+//
 // **************************************************
 
 
-// 
+//
 // Base
-// 
+//
 
 $global-background: #f3f3f3     !default;
 $global-color:      #848484     !default;
@@ -54,9 +54,9 @@ $global-radius:     3px         !default;
 $brand-color:       #f89406     !default;
 
 
-// 
+//
 // Typography
-// 
+//
 
 $global-font-family:    'Open Sans', sans-serif !default;
 // Use 100% by default to inherit the value from the user's browser settings
@@ -65,60 +65,60 @@ $global-font-weight:    400     !default;
 $global-line-height:    1.5     !default;
 
 
-// 
+//
 // Headings
-// 
+//
 
 $heading-font-family:   'Open Sans', sans-serif !default;
 $heading-font-weight:   600     !default;
 $heading-line-height:   1.3     !default;
 $heading-color:         #272727 !default;
 $heading-sizes: (
-    'h1': em( 46px ),
-    'h2': em( 36px ),
-    'h3': em( 28px ),
-    'h4': em( 22px ),
-    'h5': em( 18px ),
-    'h6': em( 16px )
+	'h1': em( 46px ),
+	'h2': em( 36px ),
+	'h3': em( 28px ),
+	'h4': em( 22px ),
+	'h5': em( 18px ),
+	'h6': em( 16px )
 ) !default;
 
 
 
-// 
+//
 // Lists
-// 
+//
 // **************************************************
 
 
-// 
+//
 // Buttons
-// 
+//
 
 $button-list:
-    'button',
-    'input[type="button"]',
-    'input[type="reset"]',
-    'input[type="submit"]';
+	'button',
+	'input[type="button"]',
+	'input[type="reset"]',
+	'input[type="submit"]';
 
 
-// 
+//
 // Inputs
-// 
+//
 
 $input-list:
-    'input[type="color"]',
-    'input[type="date"]',
-    'input[type="datetime"]',
-    'input[type="datetime-local"]',
-    'input[type="email"]',
-    'input[type="month"]',
-    'input[type="number"]',
-    'input[type="password"]',
-    'input[type="search"]',
-    'input[type="tel"]',
-    'input[type="text"]',
-    'input[type="time"]',
-    'input[type="url"]',
-    'input[type="week"]',
-    'input:not([type])',
-    'textarea';
+	'input[type="color"]',
+	'input[type="date"]',
+	'input[type="datetime"]',
+	'input[type="datetime-local"]',
+	'input[type="email"]',
+	'input[type="month"]',
+	'input[type="number"]',
+	'input[type="password"]',
+	'input[type="search"]',
+	'input[type="tel"]',
+	'input[type="text"]',
+	'input[type="time"]',
+	'input[type="url"]',
+	'input[type="week"]',
+	'input:not([type])',
+	'textarea';

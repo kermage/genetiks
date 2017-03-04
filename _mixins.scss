@@ -21,192 +21,192 @@
 
 
 
-// 
+//
 // Clearfix
-// 
+//
 // **************************************************
 
 @mixin clearfix {
-    &:after {
-        content: " ";
-        display: table;
-        clear: both;
-    }
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
 }
 
 
 
-// 
+//
 // Visibility
-// 
+//
 // **************************************************
 
 @mixin visually-hidden {
-    @include invisible();
-    
-    &:active,
-    &:focus {
-        @include visible();
-    }
+	@include invisible();
+
+	&:active,
+	&:focus {
+		@include visible();
+	}
 }
 
 
-// 
+//
 // Visually hidden but still accessible to keyboards and assistive devices
-// 
+//
 
 @mixin invisible {
-    clip: rect( 0, 0, 0, 0 );
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    width: 1px;
+	clip: rect( 0, 0, 0, 0 );
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
 }
 
 
-// 
+//
 // Reverses 'invisible' to allow the element to be focusable when navigated
-// 
+//
 
 @mixin visible {
-    clip: auto;
-    height: auto;
-    overflow: visible;
-    position: static;
-    width: auto;
+	clip: auto;
+	height: auto;
+	overflow: visible;
+	position: static;
+	width: auto;
 }
 
 
-// 
+//
 // Hide text only, not the whole element
-// 
+//
 
 @mixin text-hidden {
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
-    
-    // font: 0/0 a;
-    // color: transparent;
-    // text-shadow: none;
-    // background-color: transparent;
-    // border: 0;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	// font: 0/0 a;
+	// color: transparent;
+	// text-shadow: none;
+	// background-color: transparent;
+	// border: 0;
 }
 
 
 
-// 
+//
 // Centering
-// 
+//
 // **************************************************
 
 @mixin center( $position: null ) {
-    position: absolute;
-    
-    @if( $position == null ) {
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50% );
-    }
-    @else if( to-upper-case( $position ) == 'X' ) {
-        left: 50%;
-        transform: translateX( -50% );
-    }
-    @else if( to-upper-case( $position ) == 'Y' ) {
-        top: 50%;
-        transform: translateY( -50% );
-    }
-    
+	position: absolute;
+
+	@if( $position == null ) {
+		top: 50%;
+		left: 50%;
+		transform: translate( -50%, -50% );
+	}
+	@else if( to-upper-case( $position ) == 'X' ) {
+		left: 50%;
+		transform: translateX( -50% );
+	}
+	@else if( to-upper-case( $position ) == 'Y' ) {
+		top: 50%;
+		transform: translateY( -50% );
+	}
+
 }
 
 
 
-// 
+//
 // Type
-// 
+//
 // **************************************************
 
 
-// 
+//
 // FontAwesome
-// 
+//
 
 @mixin fa( $icon: null ) {
-    @if( $icon != null ) {
-        content: unicode( $icon );
-    }
-    
-    font-family: "FontAwesome";
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+	@if( $icon != null ) {
+		content: unicode( $icon );
+	}
+
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
 }
 
 
-// 
+//
 // Overflow
-// 
+//
 
 @mixin overflow {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 
 
-// 
+//
 // Selector
-// 
+//
 // **************************************************
 
 @mixin selector( $element ) {
-    $selections: ();
-    
-    @if( to-lower-case( $element ) == 'placeholder' ) {
-        $selections: ":-webkit-input-placeholder" ":-moz-placeholder" "-moz-placeholder" "-ms-input-placeholder";
-    }
-    @else if( to-lower-case( $element ) == 'selection' ) {
-        $selections: ":selection" ":-moz-selection";
-    }
-    
-    @each $selection in $selections {
-        &:#{$selection} {
-            @content;
-        }
-    }
+	$selections: ();
+
+	@if( to-lower-case( $element ) == 'placeholder' ) {
+		$selections: ":-webkit-input-placeholder" ":-moz-placeholder" "-moz-placeholder" "-ms-input-placeholder";
+	}
+	@else if( to-lower-case( $element ) == 'selection' ) {
+		$selections: ":selection" ":-moz-selection";
+	}
+
+	@each $selection in $selections {
+		&:#{$selection} {
+			@content;
+		}
+	}
 }
 
 
 
-// 
+//
 // Triangle
-// 
+//
 // **************************************************
 
 @mixin triangle( $size, $color, $direction ) {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset $size;
-    
-    @if( to-lower-case( $direction ) == up ) {
-        border-color: transparent transparent $color;
-        border-bottom-style: solid;
-    }
-    @else if( to-lower-case( $direction ) == down ) {
-        border-color: $color transparent transparent;
-        border-top-style: solid;
-    }
-    @else if( to-lower-case( $direction ) == left ) {
-        border-color: transparent $color transparent transparent;
-        border-right-style: solid;
-    }
-    @else if( to-lower-case( $direction ) == right ) {
-        border-color: transparent transparent transparent $color;
-        border-left-style: solid;
-    }
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border: inset $size;
+
+	@if( to-lower-case( $direction ) == up ) {
+		border-color: transparent transparent $color;
+		border-bottom-style: solid;
+	}
+	@else if( to-lower-case( $direction ) == down ) {
+		border-color: $color transparent transparent;
+		border-top-style: solid;
+	}
+	@else if( to-lower-case( $direction ) == left ) {
+		border-color: transparent $color transparent transparent;
+		border-right-style: solid;
+	}
+	@else if( to-lower-case( $direction ) == right ) {
+		border-color: transparent transparent transparent $color;
+		border-left-style: solid;
+	}
 }
