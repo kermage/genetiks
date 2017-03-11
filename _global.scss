@@ -2,9 +2,18 @@
 // Global Styles
 // ==========================================================================
 
-// Set box-sizing globally
+// Make viewport responsive
+@-ms-viewport { width: device-width; }
+
 html {
+	// Set box-sizing globally
 	box-sizing: border-box;
+
+	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	// Completely transparent default tap highlight; iOS.
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 // Inherit box-sizing
