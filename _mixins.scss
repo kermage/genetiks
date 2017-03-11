@@ -221,11 +221,22 @@
 
 @mixin flex-container( $direction: row, $wrap: nowrap, $justify: flex-start, $align: stretch, $content: stretch ) {
 	display: flex;
-	flex-direction: $direction;
-	flex-wrap: $wrap;
-	justify-content: $justify;
-	align-items: $align;
-	align-content: $content;
+
+	@if( $direction != 'row' ) {
+		flex-direction: $direction;
+	}
+	@if( $wrap != 'nowrap' ) {
+		flex-wrap: $wrap;
+	}
+	@if( $justify != 'flex-start' ) {
+		justify-content: $justify;
+	}
+	@if( $align != 'stretch' ) {
+		align-items: $align;
+	}
+	@if( $content != 'stretch' ) {
+		align-content: $content;
+	}
 }
 
 
@@ -234,8 +245,16 @@
 //
 
 @mixin flex-item( $grow: 0, $shrink: 1, $basis: auto, $align: auto ) {
-	flex-grow: $grow;
-	flex-shrink: $shrink;
-	flex-basis: $basis;
-	align-self: $align;
+	@if( $grow != 0 ) {
+		flex-grow: $grow;
+	}
+	@if( $shrink != 1 ) {
+		flex-shrink: $shrink;
+	}
+	@if( $basis != 'auto' ) {
+		flex-basis: $basis;
+	}
+	@if( $align != 'auto' ) {
+		align-self: $align;
+	}
 }
