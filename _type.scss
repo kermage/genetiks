@@ -17,7 +17,7 @@ h6 {
 }
 
 @each $heading, $font-size in $heading-sizes {
-	#{$heading}, .#{$heading} {
+	#{$heading} {
 		font-size: $font-size;
 	}
 }
@@ -25,7 +25,7 @@ h6 {
 p {
 	line-height: $global-line-height;
 	margin-top: 0;
-	margin: $global-spacing * 0.5;
+	margin-bottom: $global-spacing * 0.5;
 }
 
 a {
