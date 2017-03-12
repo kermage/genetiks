@@ -169,7 +169,7 @@
 	}
 
 	@each $selection in $selections {
-		&:#{$selection} {
+		&:#{ $selection } {
 			@content;
 		}
 	}

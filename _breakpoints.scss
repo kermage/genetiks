@@ -14,16 +14,16 @@ $xlarge: 1200px !default;
 //
 
 @mixin break-from( $name ) {
-	@if( $name == 'small' ){
-		@media screen and ( min-width: $small) { @content; }
-	} @else if( $name == 'medium' ){
-		@media screen and ( min-width: $medium) { @content; }
-	} @else if( $name == 'large' ){
-		@media screen and ( min-width: $large) { @content; }
-	} @else if( $name == 'xlarge' ){
-		@media screen and ( min-width: $xlarge) { @content; }
+	@if( $name == 'small' ) {
+		@media screen and ( min-width: $small ) { @content; }
+	} @else if( $name == 'medium' ) {
+		@media screen and ( min-width: $medium ) { @content; }
+	} @else if( $name == 'large' ) {
+		@media screen and ( min-width: $large ) { @content; }
+	} @else if( $name == 'xlarge' ) {
+		@media screen and ( min-width: $xlarge ) { @content; }
 	} @else {
-		@media screen and ( min-width: $name) { @content; }
+		@media screen and ( min-width: $name ) { @content; }
 	}
 }
 
@@ -33,13 +33,13 @@ $xlarge: 1200px !default;
 //
 
 @mixin break-until( $name ) {
-	@if( $name == 'small' ){
+	@if( $name == 'small' ) {
 		@media screen and ( max-width: $small - 1 ) { @content; }
-	} @else if( $name == 'medium' ){
+	} @else if( $name == 'medium' ) {
 		@media screen and ( max-width: $medium - 1 ) { @content; }
-	} @else if( $name == 'large' ){
+	} @else if( $name == 'large' ) {
 		@media screen and ( max-width: $large - 1 ) { @content; }
-	} @else if( $name == 'xlarge' ){
+	} @else if( $name == 'xlarge' ) {
 		@media screen and ( max-width: $xlarge - 1 ) { @content; }
 	} @else {
 		@media screen and ( max-width: $name ) { @content; }
@@ -52,15 +52,15 @@ $xlarge: 1200px !default;
 //
 
 @mixin break-only( $name ) {
-	@if( $name == 'small' ){
+	@if( $name == 'small' ) {
 		@media screen and ( max-width: $small - 1 ) { @content; }
-	} @else if( $name == 'medium' ){
-		@media screen and ( min-width: $medium) and (max-width: $large - 1 ) { @content; }
-	} @else if( $name == 'large' ){
-		@media screen and ( min-width: $large) and (max-width: $xlarge - 1 ) { @content; }
-	} @else if( $name == 'xlarge' ){
+	} @else if( $name == 'medium' ) {
+		@media screen and ( min-width: $medium ) and ( max-width: $large - 1 ) { @content; }
+	} @else if( $name == 'large' ) {
+		@media screen and ( min-width: $large ) and ( max-width: $xlarge - 1 ) { @content; }
+	} @else if( $name == 'xlarge' ) {
 		@media screen and ( min-width: $xlarge ) { @content; }
 	} @else {
-		@media screen and ( min-width: nth( $name, 1 ) ) and (max-width: nth( $name, 2 ) ) { @content; }
+		@media screen and ( min-width: nth( $name, 1 ) ) and ( max-width: nth( $name, 2 ) ) { @content; }
 	}
 }

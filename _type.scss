@@ -17,7 +17,7 @@ h6 {
 }
 
 @each $heading, $font-size in $heading-sizes {
-	#{$heading} {
+	#{ $heading } {
 		font-size: $font-size;
 	}
 }
@@ -33,7 +33,7 @@ a {
 	text-decoration: none;
 
 	&:hover {
-		color: shade($brand-color, 20);
+		color: shade( $brand-color, 20 );
 		text-decoration: underline;
 	}
 }
@@ -48,12 +48,12 @@ blockquote {
 	border: solid $brand-color;
 	border-width: 0 1px 0 5px;
 	border-radius: $global-radius;
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.125);
+	box-shadow: 0 1px 5px 0 rgba( 0, 0, 0, 0.125 );
 	margin: $global-spacing 0;
 	padding: 1em 1em 1em 3em;
 	text-align: justify;
 
-	&:before{
+	&:before {
 		content: "\201C";
 		position: absolute;
 		margin-top: -0.25em;
