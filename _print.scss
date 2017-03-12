@@ -1,14 +1,16 @@
-// sass-lint:disable no-important
 // ==========================================================================
 // Print Styles
 // ==========================================================================
 
+// sass-lint:disable no-important
 @media print {
 	*,
 	*::before,
-	*::after {
+	*::after,
+	*::first-letter,
+	*::first-line {
 		background: transparent !important;
-		color: #000 !important;
+		// color: #000 !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}
@@ -36,6 +38,10 @@
 	a[href^='#']::after,
 	a[href^='javascript:']::after {
 		content: '';
+	}
+
+	pre {
+		white-space: pre-wrap !important;
 	}
 
 	// Prevent page breaks in the middle of a blockquote or preformatted text block
