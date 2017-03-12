@@ -19,8 +19,8 @@
 //
 // **************************************************
 
-$em-base:   16px    !default;
-$rem-base:  16px    !default;
+$em-base:  16px;
+$rem-base: 16px;
 
 
 
@@ -29,10 +29,10 @@ $rem-base:  16px    !default;
 //
 // **************************************************
 
-$small:     em( 480px )     !default;
-$medium:    em( 768px )     !default;
-$large:     em( 980px )     !default;
-$xlarge:    em( 1200px )    !default;
+$small:  em( 480px );
+$medium: em( 768px );
+$large:  em( 980px );
+$xlarge: em( 1200px );
 
 
 
@@ -46,33 +46,33 @@ $xlarge:    em( 1200px )    !default;
 // Base
 //
 
-$global-background: #f3f3f3     !default;
-$global-color:      #848484     !default;
-$global-spacing:    rem( 20px ) !default;
-$global-radius:     3px         !default;
+$global-background: #f3f3f3;
+$global-color:      #848484;
+$global-spacing:    rem( 20px );
+$global-radius:     3px;
 
-$brand-color:       #f89406     !default;
+$brand-color:       #f89406;
 
 
 //
 // Typography
 //
 
-$global-font-family:    'Open Sans', sans-serif !default;
+$global-font-family: 'Open Sans', sans-serif;
 // Use 100% by default to inherit the value from the user's browser settings
-$global-font-size:      100%    !default;
-$global-font-weight:    400     !default;
-$global-line-height:    1.5     !default;
+$global-font-size:   100;
+$global-font-weight: 400;
+$global-line-height: 1.5;
 
 
 //
 // Headings
 //
 
-$heading-font-family:   'Open Sans', sans-serif !default;
-$heading-font-weight:   600     !default;
-$heading-line-height:   1.3     !default;
-$heading-color:         #272727 !default;
+$heading-font-family: 'Open Sans', sans-serif;
+$heading-font-weight: 600;
+$heading-line-height: 1.3;
+$heading-color:       #272727;
 $heading-sizes: (
 	'h1': em( 46px ),
 	'h2': em( 36px ),
@@ -80,7 +80,7 @@ $heading-sizes: (
 	'h4': em( 22px ),
 	'h5': em( 18px ),
 	'h6': em( 16px )
-) !default;
+);
 
 
 
