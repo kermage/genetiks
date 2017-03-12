@@ -10,7 +10,6 @@
 //  * Color
 //      - Mix amount of black
 //      - Mix amount of white
-//      - Add transparency
 //      - Retrieve material ui color
 // ==================================================
 
@@ -111,15 +110,6 @@ $rem-base: 16px !default;
 
 @function tint( $color, $percent: 50% ) {
 	@return mix( #fff, $color, $percent );
-}
-
-
-//
-// Add an alpha transparency value
-//
-
-@function transparent( $color, $alpha: 0.5 ) {
-	@return hsla( hue( $color ), saturation( $color ), lightness( $color ), $alpha );
 }
 
 
