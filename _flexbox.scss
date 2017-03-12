@@ -1,0 +1,49 @@
+//
+// Flex Box
+//
+// **************************************************
+
+
+//
+// Container
+//
+
+@mixin flex-container( $direction: row, $wrap: wrap, $justify: flex-start, $align: stretch, $content: stretch ) {
+	display: flex;
+
+	@if( $direction != 'row' ) {
+		flex-direction: $direction;
+	}
+	@if( $wrap != 'nowrap' ) {
+		flex-wrap: $wrap;
+	}
+	@if( $justify != 'flex-start' ) {
+		justify-content: $justify;
+	}
+	@if( $align != 'stretch' ) {
+		align-items: $align;
+	}
+	@if( $content != 'stretch' ) {
+		align-content: $content;
+	}
+}
+
+
+//
+// Item
+//
+
+@mixin flex-item( $grow: 0, $shrink: 1, $basis: auto, $align: auto ) {
+	@if( $grow != 0 ) {
+		flex-grow: $grow;
+	}
+	@if( $shrink != 1 ) {
+		flex-shrink: $shrink;
+	}
+	@if( $basis != 'auto' ) {
+		flex-basis: $basis;
+	}
+	@if( $align != 'auto' ) {
+		align-self: $align;
+	}
+}

@@ -17,13 +17,6 @@
 //      - Placeholder
 //      - Selection
 //  * Triangle
-//  * Flex Box
-//      - Container
-//      - Item
-//  * Breakpoints
-//      - From
-//      - Until
-//      - Only
 // ==================================================
 
 
@@ -208,106 +201,5 @@
 	} @else if( to-lower-case( $direction ) == 'right' ) {
 		border-color: transparent transparent transparent $color;
 		border-left-style: solid;
-	}
-}
-
-
-
-//
-// Flex Box
-//
-// **************************************************
-
-
-//
-// Container
-//
-
-@mixin flex-container( $direction: row, $wrap: wrap, $justify: flex-start, $align: stretch, $content: stretch ) {
-	display: flex;
-
-	@if( $direction != 'row' ) {
-		flex-direction: $direction;
-	}
-	@if( $wrap != 'nowrap' ) {
-		flex-wrap: $wrap;
-	}
-	@if( $justify != 'flex-start' ) {
-		justify-content: $justify;
-	}
-	@if( $align != 'stretch' ) {
-		align-items: $align;
-	}
-	@if( $content != 'stretch' ) {
-		align-content: $content;
-	}
-}
-
-
-//
-// Item
-//
-
-@mixin flex-item( $grow: 0, $shrink: 1, $basis: auto, $align: auto ) {
-	@if( $grow != 0 ) {
-		flex-grow: $grow;
-	}
-	@if( $shrink != 1 ) {
-		flex-shrink: $shrink;
-	}
-	@if( $basis != 'auto' ) {
-		flex-basis: $basis;
-	}
-	@if( $align != 'auto' ) {
-		align-self: $align;
-	}
-}
-
-
-
-//
-// Breakpoints
-//
-// **************************************************
-
-$small:  480px !default;
-$medium: 768px !default;
-$large:  980px !default;
-$xlarge: 1200px !default;
-
-
-@mixin break-from( $name ) {
-	@if( $name == 'small' ){
-		@media screen and ( min-width: $small) { @content; }
-	} @else if( $name == 'medium' ){
-		@media screen and ( min-width: $medium) { @content; }
-	} @else if( $name == 'large' ){
-		@media screen and ( min-width: $large) { @content; }
-	} @else if( $name == 'xlarge' ){
-		@media screen and ( min-width: $xlarge) { @content; }
-	}
-}
-
-@mixin break-until( $name ) {
-	@if( $name == 'small' ){
-		@media screen and ( max-width: $small - 1 ) { @content; }
-	} @else if( $name == 'medium' ){
-		@media screen and ( max-width: $medium - 1 ) { @content; }
-	} @else if( $name == 'large' ){
-		@media screen and ( max-width: $large - 1 ) { @content; }
-	} @else if( $name == 'xlarge' ){
-		@media screen and ( max-width: $xlarge - 1 ) { @content; }
-	}
-}
-
-@mixin break-only( $name ) {
-	@if( $name == 'small' ){
-		@media screen and ( max-width: $small - 1 ) { @content; }
-	} @else if( $name == 'medium' ){
-		@media screen and ( min-width: $medium) and (max-width: $large - 1 ) { @content; }
-	} @else if( $name == 'large' ){
-		@media screen and ( min-width: $large) and (max-width: $xlarge - 1 ) { @content; }
-	} @else if( $name == 'xlarge' ){
-		@media screen and ( min-width: $xlarge ) { @content; }
 	}
 }
