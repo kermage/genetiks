@@ -270,6 +270,12 @@
 //
 // **************************************************
 
+$small:  480px !default;
+$medium: 768px !default;
+$large:  980px !default;
+$xlarge: 1200px !default;
+
+
 @mixin break-from( $name ) {
 	@if( $name == 'small' ){
 		@media screen and ( min-width: $small) { @content; }
