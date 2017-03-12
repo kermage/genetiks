@@ -9,6 +9,9 @@ html {
 	// Set box-sizing globally
 	box-sizing: border-box;
 
+	// Use percentage by default to inherit the value from the user's browser settings
+	font-size: ( $rem-base / 16px ) * 100%;
+
 	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 
@@ -29,7 +32,7 @@ body {
 	color: $global-color;
 
 	font-family: $global-font-family;
-	font-size: $global-font-size;
+	font-size: 1rem; // Follow the root
 	font-weight: $global-font-weight;
 	line-height: $global-line-height;
 }

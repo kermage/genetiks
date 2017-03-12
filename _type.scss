@@ -70,7 +70,7 @@ q {
 
 	&:before, &:after {
 		font-family: Georgia, serif;
-		font-size: $global-font-size * 1.75;
+		font-size: 1.75rem;
 		position: absolute;
 		margin-top: -7.5px;
 	}
@@ -81,7 +81,7 @@ q {
 }
 
 cite {
-	font-size: $global-font-size * 0.875;
+	font-size: 0.875rem;
 
 	&:before {
 		content: "\2014";
