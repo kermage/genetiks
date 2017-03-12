@@ -22,6 +22,8 @@ $xlarge: 1200px !default;
 		@media screen and ( min-width: $large) { @content; }
 	} @else if( $name == 'xlarge' ){
 		@media screen and ( min-width: $xlarge) { @content; }
+	} @else {
+		@media screen and ( min-width: $name) { @content; }
 	}
 }
 
@@ -39,6 +41,8 @@ $xlarge: 1200px !default;
 		@media screen and ( max-width: $large - 1 ) { @content; }
 	} @else if( $name == 'xlarge' ){
 		@media screen and ( max-width: $xlarge - 1 ) { @content; }
+	} @else {
+		@media screen and ( max-width: $name ) { @content; }
 	}
 }
 
@@ -56,5 +60,7 @@ $xlarge: 1200px !default;
 		@media screen and ( min-width: $large) and (max-width: $xlarge - 1 ) { @content; }
 	} @else if( $name == 'xlarge' ){
 		@media screen and ( min-width: $xlarge ) { @content; }
+	} @else {
+		@media screen and ( min-width: nth( $name, 1 ) ) and (max-width: nth( $name, 2 ) ) { @content; }
 	}
 }
