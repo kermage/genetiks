@@ -20,6 +20,10 @@
 //  * Flex Box
 //      - Container
 //      - Item
+//  * Breakpoints
+//      - From
+//      - Until
+//      - Only
 // ==================================================
 
 
@@ -256,5 +260,48 @@
 	}
 	@if( $align != 'auto' ) {
 		align-self: $align;
+	}
+}
+
+
+
+//
+// Breakpoints
+//
+// **************************************************
+
+@mixin break-from( $name ) {
+	@if( $name == 'small' ){
+		@media screen and ( min-width: $small) { @content; }
+	} @else if( $name == 'medium' ){
+		@media screen and ( min-width: $medium) { @content; }
+	} @else if( $name == 'large' ){
+		@media screen and ( min-width: $large) { @content; }
+	} @else if( $name == 'xlarge' ){
+		@media screen and ( min-width: $xlarge) { @content; }
+	}
+}
+
+@mixin break-until( $name ) {
+	@if( $name == 'small' ){
+		@media screen and ( max-width: $small - 1 ) { @content; }
+	} @else if( $name == 'medium' ){
+		@media screen and ( max-width: $medium - 1 ) { @content; }
+	} @else if( $name == 'large' ){
+		@media screen and ( max-width: $large - 1 ) { @content; }
+	} @else if( $name == 'xlarge' ){
+		@media screen and ( max-width: $xlarge - 1 ) { @content; }
+	}
+}
+
+@mixin break-only( $name ) {
+	@if( $name == 'small' ){
+		@media screen and ( max-width: $small - 1 ) { @content; }
+	} @else if( $name == 'medium' ){
+		@media screen and ( min-width: $medium) and (max-width: $large - 1 ) { @content; }
+	} @else if( $name == 'large' ){
+		@media screen and ( min-width: $large) and (max-width: $xlarge - 1 ) { @content; }
+	} @else if( $name == 'xlarge' ){
+		@media screen and ( min-width: $xlarge ) { @content; }
 	}
 }
