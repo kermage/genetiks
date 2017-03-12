@@ -13,7 +13,7 @@ h6 {
 	font-weight: $heading-font-weight;
 	line-height: $heading-line-height;
 	margin-top: 0;
-	margin-bottom: $global-spacing * 0.75;
+	margin-bottom: 0.5rem;
 }
 
 @each $heading, $font-size in $heading-sizes {
@@ -25,7 +25,7 @@ h6 {
 p {
 	line-height: $global-line-height;
 	margin-top: 0;
-	margin-bottom: $global-spacing * 0.5;
+	margin-bottom: 0.75em;
 }
 
 a {
@@ -50,29 +50,29 @@ blockquote {
 	border-radius: $global-radius;
 	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.125);
 	margin: $global-spacing 0;
-	padding: $global-spacing $global-spacing $global-spacing $global-spacing * 2;
+	padding: 1em 1em 1em 3em;
 	text-align: justify;
 
 	&:before{
 		content: "\201C";
 		position: absolute;
-		margin-top: -15px;
-		left: 10px;
+		margin-top: -0.25em;
+		left: 0.125em;
 		color: $gray;
 		font-family: Georgia, serif;
-		font-size: em( 60px );
+		font-size: 4em;
 		font-weight: bold;
 	}
 }
 
 q {
-	padding: 0 $global-spacing * 0.5;
+	padding: 0 0.75em;
 
 	&:before, &:after {
 		font-family: Georgia, serif;
-		font-size: 1.75rem;
+		font-size: 1.5em;
 		position: absolute;
-		margin-top: -7.5px;
+		margin-top: -0.125em;
 	}
 
 	&:before {
@@ -81,9 +81,10 @@ q {
 }
 
 cite {
-	font-size: 0.875rem;
+	font-size: 0.8em;
 
 	&:before {
 		content: "\2014";
+		margin-right: 0.5em;
 	}
 }
