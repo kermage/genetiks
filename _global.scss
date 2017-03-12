@@ -3,7 +3,7 @@
 // ==========================================================================
 
 // Make viewport responsive
-@-ms-viewport { width: device-width; }
+@-ms-viewport { width: device-width; } // sass-lint:disable-line no-vendor-prefixes
 
 html {
 	// Set box-sizing globally
@@ -13,16 +13,16 @@ html {
 	font-size: ( $rem-base / 16px ) * 100%;
 
 	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
-	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-ms-overflow-style: -ms-autohiding-scrollbar; // sass-lint:disable-line no-vendor-prefixes
 
 	// Completely transparent default tap highlight; iOS.
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ); // sass-lint:disable-line no-vendor-prefixes
 }
 
 // Inherit box-sizing
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
@@ -47,7 +47,8 @@ img {
 	vertical-align: middle;
 }
 
-ul, ol {
+ul,
+ol {
 	margin: 0 0 $global-spacing $global-spacing * 2;
 	padding: 0;
 

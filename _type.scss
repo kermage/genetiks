@@ -38,8 +38,9 @@ a {
 	}
 }
 
-blockquote, q {
-	quotes: "\201C""\201D""\2018""\2019";
+blockquote,
+q {
+	quotes: '\201C''\201D''\2018''\2019';
 	position: relative;
 }
 
@@ -53,38 +54,43 @@ blockquote {
 	padding: 1em 1em 1em 3em;
 	text-align: justify;
 
-	&:before {
-		content: "\201C";
+	&::before {
+		content: '\201C';
 		position: absolute;
 		margin-top: -0.25em;
 		left: 0.125em;
 		color: $gray;
 		font-family: Georgia, serif;
 		font-size: 4em;
-		font-weight: bold;
+		font-weight: 600;
 	}
 }
 
 q {
 	padding: 0 0.75em;
 
-	&:before, &:after {
+	&::before,
+	&::after {
 		font-family: Georgia, serif;
 		font-size: 1.5em;
 		position: absolute;
 		margin-top: -0.125em;
 	}
 
-	&:before {
+	&::before {
 		left: 0;
+	}
+
+	&::after {
+		right: 0;
 	}
 }
 
 cite {
 	font-size: 0.8em;
 
-	&:before {
-		content: "\2014";
+	&::before {
+		content: '\2014';
 		margin-right: 0.5em;
 	}
 }

@@ -1,11 +1,12 @@
+// sass-lint:disable no-important
 // ==========================================================================
 // Print Styles
 // ==========================================================================
 
 @media print {
 	*,
-	*:before,
-	*:after {
+	*::before,
+	*::after {
 		background: transparent !important;
 		color: #000 !important;
 		box-shadow: none !important;
@@ -21,18 +22,19 @@
 	a:visited {
 		text-decoration: underline;
 	}
-	a[href]:after {
-		content: " (" attr( href ) ") ";
+
+	a[href]::after {
+		content: ' (' attr( href ) ') ';
 	}
 
 	// Display what an abbreviation stands for after the text
-	abbr[title]:after {
-		content: " (" attr( title ) ") ";
+	abbr[title]::after {
+		content: ' (' attr( title ) ') ';
 	}
 
 	// Don't display the URL for images or JavaScript/internal links
-	a[href^="#"]:after,
-	a[href^="javascript:"]:after {
+	a[href^='#']::after,
+	a[href^='javascript:']::after {
 		content: '';
 	}
 
