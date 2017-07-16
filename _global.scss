@@ -36,29 +36,3 @@ body {
 	font-weight: $font-weight-base;
 	line-height: $line-height-base;
 }
-
-img {
-	// Automatically scale height and adhere to container width
-	height: auto;
-	max-width: 100%;
-
-	// Get rid of gap under images
-	display: inline-block;
-	vertical-align: middle;
-}
-
-ul,
-ol {
-	margin: 0 0 $global-spacing $global-spacing * 2;
-	padding: 0;
-
-	& & {
-		margin-bottom: 0;
-		margin-left: $global-spacing;
-	}
-}
-
-table {
-	margin: 0 0 $global-spacing;
-	width: 100%;
-}
