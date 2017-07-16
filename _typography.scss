@@ -8,32 +8,32 @@ h3,
 h4,
 h5,
 h6 {
-	color: $heading-color;
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
-	line-height: $heading-line-height;
+	color: $headings-color;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
 	margin-top: 0;
 	margin-bottom: 0.5rem;
 }
 
-@each $heading, $font-size in $heading-sizes {
+@each $heading, $font-size in $headings-sizes {
 	#{ $heading } {
 		font-size: $font-size;
 	}
 }
 
 p {
-	line-height: $global-line-height;
+	line-height: $line-height-base;
 	margin-top: 0;
 	margin-bottom: 0.75em;
 }
 
 a {
-	color: $brand-color;
+	color: $link-color;
 	text-decoration: none;
 
 	&:hover {
-		color: shade( $brand-color, 20 );
+		color: $link-hover-color;
 		text-decoration: underline;
 	}
 }
@@ -46,7 +46,7 @@ q {
 
 blockquote {
 	background: $white;
-	border: solid $brand-color;
+	border: solid $link-color;
 	border-width: 0 1px 0 5px;
 	border-radius: $global-radius;
 	box-shadow: 0 1px 5px 0 rgba( 0, 0, 0, 0.125 );

@@ -31,10 +31,10 @@ body {
 	background: $global-background;
 	color: $global-color;
 
-	font-family: $global-font-family;
+	font-family: $font-family-base;
 	font-size: 1rem; // Follow the root
-	font-weight: $global-font-weight;
-	line-height: $global-line-height;
+	font-weight: $font-weight-base;
+	line-height: $line-height-base;
 }
 
 img {
