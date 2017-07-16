@@ -11,21 +11,10 @@ h6 {
 	color: $headings-color;
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
-	line-height: $headings-line-height;
-	margin-top: 0;
-	margin-bottom: 0.5rem;
-}
-
-@each $heading, $font-size in $headings-sizes {
-	#{ $heading } {
-		font-size: $font-size;
-	}
 }
 
 p {
 	line-height: $line-height-base;
-	margin-top: 0;
-	margin-bottom: 0.75em;
 }
 
 a {
