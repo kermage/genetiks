@@ -14,16 +14,16 @@ img {
 
 ul,
 ol {
-	margin: 0 0 $global-spacing $global-spacing * 2;
+	margin: 0 0 $spacer $spacer * 2;
 	padding: 0;
 
 	& & {
 		margin-bottom: 0;
-		margin-left: $global-spacing;
+		margin-left: $spacer;
 	}
 }
 
 table {
-	margin: 0 0 $global-spacing;
+	margin: 0 0 $spacer;
 	width: 100%;
 }

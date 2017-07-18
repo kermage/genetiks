@@ -46,10 +46,10 @@ $xlarge: em( 1200px );
 // Base
 //
 
-$global-background: #f3f3f3;
-$global-color:      #848484;
-$global-spacing:    rem( 20px );
-$global-radius:     3px;
+$body-background: #f3f3f3;
+$body-color:      #848484;
+$spacer:          rem( 20px );
+$border-radius:   3px;
 
 $link-color:       #f89406;
 $link-hover-color: shade( $link-color, 20 );

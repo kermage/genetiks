@@ -16,13 +16,13 @@
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: $global-spacing;
+	margin-right: $spacer;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: $global-spacing;
+	margin-left: $spacer;
 }
 
 .aligncenter {
@@ -41,7 +41,7 @@
 }
 
 .wp-caption {
-	margin-bottom: $global-spacing;
+	margin-bottom: $spacer;
 	max-width: 100%;
 
 	img[class*='wp-image-'] {
@@ -51,7 +51,7 @@
 	}
 
 	.wp-caption-text {
-		margin: $global-spacing 0;
+		margin: $spacer 0;
 	}
 }
 
@@ -60,13 +60,13 @@
 }
 
 .gallery {
-	margin-bottom: $global-spacing * 2;
+	margin-bottom: $spacer * 2;
 }
 
 .gallery-item {
 	display: inline-block;
-	padding-left: $global-spacing;
-	padding-right: $global-spacing;
+	padding-left: $spacer;
+	padding-right: $spacer;
 	text-align: center;
 	vertical-align: middle;
 	width: 100%;
