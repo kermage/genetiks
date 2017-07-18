@@ -55,7 +55,7 @@ $xlarge: 1200px !default;
 	@if( $name == 'xsmall' ) {
 		@media screen and ( max-width: $small - 1 ) { @content; }
 	} @else if( $name == 'small' ) {
-		@media screen and ( min-width: $small ) and ( max-width: $media - 1 ) { @content; }
+		@media screen and ( min-width: $small ) and ( max-width: $medium - 1 ) { @content; }
 	} @else if( $name == 'medium' ) {
 		@media screen and ( min-width: $medium ) and ( max-width: $large - 1 ) { @content; }
 	} @else if( $name == 'large' ) {
