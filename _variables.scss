@@ -48,8 +48,8 @@ $xlarge: em( 1200px );
 
 $body-background: #f3f3f3;
 $body-color:      #848484;
-$spacer:          rem( 20px );
-$border-radius:   3px;
+$spacer:          1rem;
+$border-radius:   0.25em;
 
 $link-color:       #f89406;
 $link-hover-color: shade( $link-color, 20 );

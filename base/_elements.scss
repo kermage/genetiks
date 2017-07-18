@@ -14,7 +14,7 @@ img {
 
 ul,
 ol {
-	margin: 0 0 $spacer $spacer * 2;
+	margin: 0 0 $spacer ($spacer * 2);
 	padding: 0;
 
 	& & {
