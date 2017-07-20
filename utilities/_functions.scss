@@ -90,6 +90,22 @@ $rem-base: 16px !default;
 
 
 //
+// Back to px
+//
+
+@function px( $value ) {
+	$unit: unit( $value );
+	$value: strip-unit( $value );
+
+	@if $unit == 'em' {
+		@return $value * $em-base;
+	} @else if $unit == 'rem' {
+		@return $value * $rem-base;
+	}
+}
+
+
+//
 // Map to List
 //
 
