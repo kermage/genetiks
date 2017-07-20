@@ -8,6 +8,13 @@ $medium: 768px !default;
 $large:  980px !default;
 $xlarge: 1200px !default;
 
+$breakpoints: (
+	small: $small,
+	medium: $medium,
+	large: $large,
+	xlarge: $xlarge
+) !default;
+
 
 //
 // From
