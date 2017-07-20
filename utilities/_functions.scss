@@ -13,6 +13,9 @@
 //      - Mix amount of black
 //      - Mix amount of white
 //      - Retrieve material ui color
+//  * Breakpoint
+//      - Return minimum breakpoint width
+//      - Return maximum breakpoint width
 // ==================================================
 
 
@@ -157,4 +160,48 @@ $rem-base: 16px !default;
 	$name: quote( $name );
 	$variant: quote( $variant );
 	@return map-get( map-get( $mui-colors, $name ), $variant );
+}
+
+
+
+//
+// Breakpoint
+//
+// **************************************************
+
+
+//
+// Return minimum breakpoint width
+//
+
+@function break-from( $query ) {
+	$value: $query;
+
+	@if map-has-key( $breakpoints, $query ) {
+		$value: map-get( $breakpoints, $query );
+	}
+	@return $value;
+}
+
+
+//
+// Return maximum breakpoint width
+//
+
+@function break-until( $query ) {
+	$value: $query;
+
+	@if map-has-key( $breakpoints, $query ) {
+		$value: map-get( $breakpoints, $query );
+		$unit: unit( $value );
+
+		@if $unit == 'em' {
+			$value: em( px( $value ) - 1 );
+		} @else if $unit == 'rem' {
+			$value: rem( px( $value ) - 1 );
+		} @else {
+			$value: $value - 1;
+		}
+	}
+	@return $value;
 }
