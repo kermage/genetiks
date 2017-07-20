@@ -98,9 +98,9 @@ $rem-base: 16px !default;
 	$value: strip-unit( $value );
 
 	@if $unit == 'em' {
-		@return $value * $em-base;
+		@return $value * strip-unit( $em-base ) * 1px;
 	} @else if $unit == 'rem' {
-		@return $value * $rem-base;
+		@return $value * strip-unit( $rem-base ) * 1px;
 	}
 }
 
