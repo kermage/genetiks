@@ -20,18 +20,9 @@ $breakpoints: (
 // From
 //
 
-@mixin break-from( $name ) {
-	@if( $name == 'small' ) {
-		@media screen and ( min-width: $small ) { @content; }
-	} @else if( $name == 'medium' ) {
-		@media screen and ( min-width: $medium ) { @content; }
-	} @else if( $name == 'large' ) {
-		@media screen and ( min-width: $large ) { @content; }
-	} @else if( $name == 'xlarge' ) {
-		@media screen and ( min-width: $xlarge ) { @content; }
-	} @else {
-		@media screen and ( min-width: $name ) { @content; }
-	}
+@mixin break-from( $query ) {
+	$value: break-from( $query );
+	@media screen and ( min-width: $value ) { @content; }
 }
 
 
@@ -39,18 +30,9 @@ $breakpoints: (
 // Until
 //
 
-@mixin break-until( $name ) {
-	@if( $name == 'small' ) {
-		@media screen and ( max-width: $small - 1 ) { @content; }
-	} @else if( $name == 'medium' ) {
-		@media screen and ( max-width: $medium - 1 ) { @content; }
-	} @else if( $name == 'large' ) {
-		@media screen and ( max-width: $large - 1 ) { @content; }
-	} @else if( $name == 'xlarge' ) {
-		@media screen and ( max-width: $xlarge - 1 ) { @content; }
-	} @else {
-		@media screen and ( max-width: $name ) { @content; }
-	}
+@mixin break-until( $query ) {
+	$value: break-until( $query );
+	@media screen and ( max-width: $value ) { @content; }
 }
 
 
