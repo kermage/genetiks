@@ -3,16 +3,11 @@
 //
 // **************************************************
 
-$small:  480px !default;
-$medium: 768px !default;
-$large:  980px !default;
-$xlarge: 1200px !default;
-
 $breakpoints: (
-	small: $small,
-	medium: $medium,
-	large: $large,
-	xlarge: $xlarge
+	small: 480px,
+	medium: 768px,
+	large: 980px,
+	xlarge: 1200px
 ) !default;
 
 
@@ -40,16 +35,7 @@ $breakpoints: (
 // Only
 //
 
-@mixin break-only( $name ) {
-	@if( $name == 'small' ) {
-		@media screen and ( max-width: $small - 1 ) { @content; }
-	} @else if( $name == 'medium' ) {
-		@media screen and ( min-width: $medium ) and ( max-width: $large - 1 ) { @content; }
-	} @else if( $name == 'large' ) {
-		@media screen and ( min-width: $large ) and ( max-width: $xlarge - 1 ) { @content; }
-	} @else if( $name == 'xlarge' ) {
-		@media screen and ( min-width: $xlarge ) { @content; }
-	} @else {
-		@media screen and ( min-width: nth( $name, 1 ) ) and ( max-width: nth( $name, 2 ) ) { @content; }
-	}
+@mixin break-only( $query ) {
+	$value: break-only( $query );
+	@media screen and ( min-width: nth( $value, 1 ) ) and ( max-width: nth( $value, 2 ) ) { @content; }
 }
