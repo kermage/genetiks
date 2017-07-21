@@ -29,10 +29,15 @@ $rem-base: 16px;
 //
 // **************************************************
 
-$small:  em( 480px );
-$medium: em( 768px );
-$large:  em( 980px );
-$xlarge: em( 1200px );
+$breakpoints: (
+	xxsmall: 0,
+	xsmall:  em( 420px ),
+	small:   em( 560px ),
+	medium:  em( 768px ),
+	large:   em( 1024px ),
+	xlarge:  em( 1200px ),
+	xxlarge: em( 1440px )
+);
 
 
 
