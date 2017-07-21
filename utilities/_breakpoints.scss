@@ -40,5 +40,12 @@ $breakpoints: (
 
 @mixin break-only( $query ) {
 	$value: break-only( $query );
-	@media screen and ( min-width: nth( $value, 1 ) ) and ( max-width: nth( $value, 2 ) ) { @content; }
+
+	@if nth( $value, 1 ) != null and nth( $value, 2 ) != null {
+		@media screen and ( min-width: nth( $value, 1 ) ) and ( max-width: nth( $value, 2 ) ) { @content; }
+	} @else if nth( $value, 1 ) == null {
+		@media screen and ( max-width: $value ) { @content; }
+	} @else if nth( $value, 2 ) == null {
+		@media screen and ( min-width: $value ) { @content; }
+	}
 }

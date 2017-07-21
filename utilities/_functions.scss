@@ -181,7 +181,7 @@ $rem-base: 16px !default;
 	@if map-has-key( $breakpoints, $query ) {
 		$value: map-get( $breakpoints, $query );
 	}
-	@return $value;
+	@return if( $value != 0, $value, null );
 }
 
 
@@ -219,7 +219,8 @@ $rem-base: 16px !default;
 
 	@if map-has-key( $breakpoints, $query ) {
 		$value: set-nth( $value, 1, break-from( $query ) );
-		$value: append( $value, break-until( nth( $names, $index + 1 ) ) );
+		$query: if( $index < length( $names ), nth( $names, $index + 1 ), null );
+		$value: append( $value, break-until( $query ) );
 	}
 	@return $value
 }
