@@ -16,6 +16,7 @@
 //  * Breakpoint
 //      - Return minimum breakpoint width
 //      - Return maximum breakpoint width
+//      - Return minimum and maximum breakpoint width
 // ==================================================
 
 
@@ -204,4 +205,21 @@ $rem-base: 16px !default;
 		}
 	}
 	@return $value;
+}
+
+
+//
+// Return minimum and maximum breakpoint width
+//
+
+@function break-only( $query ) {
+	$value: $query;
+	$names: map-keys( $breakpoints );
+	$index: index( $names, $query );
+
+	@if map-has-key( $breakpoints, $query ) {
+		$value: set-nth( $value, 1, break-from( $query ) );
+		$value: append( $value, break-until( nth( $names, $index + 1 ) ) );
+	}
+	@return $value
 }
