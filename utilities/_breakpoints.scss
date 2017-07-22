@@ -20,7 +20,12 @@ $breakpoints: (
 
 @mixin break-from( $query ) {
 	$value: break-from( $query );
-	@media screen and ( min-width: $value ) { @content; }
+
+	@if $value != null {
+		@media screen and ( min-width: $value ) { @content; }
+	} @else {
+		@content;
+	}
 }
 
 
@@ -30,7 +35,12 @@ $breakpoints: (
 
 @mixin break-until( $query ) {
 	$value: break-until( $query );
-	@media screen and ( max-width: $value ) { @content; }
+
+	@if $value != -1 {
+		@media screen and ( max-width: $value ) { @content; }
+	} @else {
+		@content;
+	}
 }
 
 
