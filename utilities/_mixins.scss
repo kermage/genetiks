@@ -2,6 +2,7 @@
 // TABLE OF CONTENTS
 // --------------------------------------------------
 //  * Clearfix
+//  * Container
 //  * Visibility
 //      - Element Invisible
 //      - Element Visible
@@ -32,6 +33,21 @@
 		display: table;
 		clear: both;
 	}
+}
+
+
+
+//
+// Container
+//
+// **************************************************
+
+@mixin container( $width: 100% ) {
+	@include clearfix();
+
+	max-width: $width;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
