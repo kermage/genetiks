@@ -75,6 +75,7 @@ $rem-base: 16px !default;
 //
 
 @function em( $value, $base: $em-base ) {
+	$value: px( $value );
 	$value: strip-unit( $value );
 	$base: strip-unit( $base );
 
@@ -87,6 +88,7 @@ $rem-base: 16px !default;
 //
 
 @function rem( $value, $base: $rem-base ) {
+	$value: px( $value );
 	$value: strip-unit( $value );
 	$base: strip-unit( $base );
 
