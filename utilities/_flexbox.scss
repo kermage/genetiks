@@ -37,6 +37,7 @@
 	@if( $basis != 0 and $basis != auto ) {
 		$grow: 0;
 		$shrink: 0;
+		flex-grow: 0;
 	}
 	@if( $grow != 0 ) {
 		flex-grow: $grow;
