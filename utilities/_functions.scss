@@ -130,6 +130,15 @@ $rem-base: 16px !default;
 }
 
 
+//
+// Prepend a value to list
+//
+
+@function prepend( $list, $value ) {
+	@return join( $value, $list );
+}
+
+
 
 //
 // Color
