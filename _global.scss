@@ -14,9 +14,6 @@ html {
 
 	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
 	-ms-overflow-style: scrollbar; // sass-lint:disable-line no-vendor-prefixes
-
-	// Completely transparent default tap highlight; iOS.
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ); // sass-lint:disable-line no-vendor-prefixes
 }
 
 // Inherit box-sizing
