@@ -59,3 +59,30 @@ $breakpoints: (
 		@media screen and ( min-width: $value ) { @content; }
 	}
 }
+
+
+//
+// Break Mixin
+//
+
+@mixin break( $value ) {
+	$key: nth( $value, 1 );
+	$query: nth( $value, 2 );
+	$accepted: ( 'from', 'until', 'only' );
+
+	@if index( $accepted, $key ) {
+		@if $key == 'from' {
+			@include break-from( $query ) {
+				@content;
+			}
+		} @else if $key == 'until' {
+			@include break-until( $query ) {
+				@content;
+			}
+		} @else if $key == 'only' {
+			@include break-only( $query ) {
+				@content;
+			}
+		}
+	}
+}
