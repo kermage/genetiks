@@ -173,7 +173,7 @@ $rem-base: 16px !default;
 // Remove the nth item
 //
 
-@function unset-nth( $list, $index, $value ) {
+@function unset-nth( $list, $index ) {
 	$result: ();
 
 	@for $i from 1 through length( $list ) {
