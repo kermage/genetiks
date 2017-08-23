@@ -67,7 +67,7 @@ $breakpoints: (
 
 @mixin break( $value ) {
 	$key: nth( $value, 1 );
-	$query: nth( $value, 2 );
+	$query: unset-nth( $value, 1 );
 	$accepted: ( 'from', 'until', 'only' );
 
 	@if index( $accepted, $key ) {
