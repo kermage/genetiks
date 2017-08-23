@@ -9,6 +9,10 @@
 //      - Pixel to rem
 //      - Back to px
 //      - Map to List
+//  * List
+//      - Prepend a value
+//      - Insert a value at index n
+//      - Remove the nth item
 //  * Color
 //      - Mix amount of black
 //      - Mix amount of white
@@ -130,8 +134,15 @@ $rem-base: 16px !default;
 }
 
 
+
 //
-// Prepend a value to list
+// List
+//
+// **************************************************
+
+
+//
+// Prepend a value
 //
 
 @function prepend( $list, $value ) {
