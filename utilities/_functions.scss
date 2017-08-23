@@ -139,6 +139,25 @@ $rem-base: 16px !default;
 }
 
 
+//
+// Insert a value at index n
+//
+
+@function insert-nth( $list, $index, $value ) {
+	$result: ();
+
+	@for $i from 1 through length( $list ) {
+		@if $i == $index {
+			$result: append( $result, $value );
+		}
+
+		$result: append( $result, nth( $list, $i ) );
+	}
+
+	@return $result;
+}
+
+
 
 //
 // Color
