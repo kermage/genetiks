@@ -29,6 +29,10 @@ table {
 	border-collapse: collapse;
 }
 
+caption {
+	text-align: inherit;
+}
+
 figure {
 	margin: 0 0 $spacer;
 }
