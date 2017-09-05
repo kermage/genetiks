@@ -33,6 +33,11 @@ caption {
 	text-align: inherit;
 }
 
+th,
+td {
+	padding: ($spacer / 2);
+}
+
 figure {
 	margin: 0 0 $spacer;
 }
