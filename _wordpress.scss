@@ -64,7 +64,6 @@
 
 .gallery-item {
 	@include flex-item();
-	margin: 0;
 	padding-left: $spacer;
 	padding-right: $spacer;
 	text-align: center;
