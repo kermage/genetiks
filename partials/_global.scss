@@ -35,3 +35,15 @@ body {
 
 	text-align: left;
 }
+
+// Remove the touch delay
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+	touch-action: manipulation;
+}
