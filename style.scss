@@ -4,6 +4,33 @@
  *  Licensed under MIT.
  */
 
+// ==================================================
+// TABLE OF CONTENTS
+// --------------------------------------------------
+//  * Utilities
+//    - Functions
+//    - Mixins
+//    - Breakpoints
+//    - Flex Box
+//    - Colors
+//    - Variables
+//  * Partials
+//    - Print
+//    - Global
+//    - WordPress
+//  * Base Styles
+//    - Typography
+//    - Elements
+//    - Fields
+//    - Buttons
+// ==================================================
+
+
+//
+// Utilities
+//
+// **************************************************
+
 @import 'utilities/functions';
 @import 'utilities/mixins';
 @import 'utilities/breakpoints';
@@ -13,10 +40,20 @@
 @import 'variables';
 
 
+//
+// Partials
+//
+// **************************************************
+
 @import 'partials/print';
 @import 'partials/global';
 @import 'partials/wordpress';
 
+
+//
+// Base Styles
+//
+// **************************************************
 
 @import 'base/typography';
 @import 'base/elements';
