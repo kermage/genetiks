@@ -7,6 +7,9 @@
 //      - Base
 //      - Typography
 //      - Headings
+//  * Colors
+//      - Grayscale
+//      - General
 //  * Lists
 //      - Buttons
 //      - Inputs
@@ -86,6 +89,42 @@ $h3-font-size: 28px;
 $h4-font-size: 22px;
 $h5-font-size: 18px;
 $h6-font-size: 16px;
+
+
+
+//
+// Colors
+//
+// **************************************************
+
+
+//
+// Grayscale
+//
+
+$black:        #000;
+$gray-darker:  #333;
+$gray:         #666;
+$gray-lighter: #999;
+$white:        #fff;
+
+
+//
+// General
+//
+
+$red:    #ff4136;
+$green:  #2ecc40;
+$blue:   #0074d9;
+$yellow: #ffdc00;
+$orange: #ff851b;
+$pink:   #f012be;
+$purple: #b10dc9;
+$navy:   #001f3f;
+$aqua:   #7fdbff;
+$olive:  #3d9970;
+$lime:   #01ff70;
+$maroon: #85144b;
 
 
 
