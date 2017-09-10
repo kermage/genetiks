@@ -5,19 +5,15 @@
 // Make viewport responsive
 @-ms-viewport { width: device-width; } // sass-lint:disable-line no-vendor-prefixes
 
-html {
-	// Set box-sizing globally
-	box-sizing: border-box;
-
-	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
-	-ms-overflow-style: scrollbar; // sass-lint:disable-line no-vendor-prefixes
-}
-
-// Inherit box-sizing
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+	box-sizing: border-box;
+}
+
+html {
+	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
+	-ms-overflow-style: scrollbar; // sass-lint:disable-line no-vendor-prefixes
 }
 
 // Opinionated defaults
