@@ -27,6 +27,10 @@ body {
 	line-height: $line-height-base;
 
 	text-align: left;
+
+	@include break-until( small ) {
+		font-size: 0.875rem;
+	}
 }
 
 // Remove the touch delay
