@@ -280,5 +280,5 @@ $rem-base: 16px !default;
 		$query: if( $index < length( $names ), nth( $names, $index + 1 ), null );
 		$value: append( $value, break-until( $query ) );
 	}
-	@return $value
+	@return $value;
 }
