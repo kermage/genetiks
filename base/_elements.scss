@@ -12,15 +12,15 @@ img {
 	vertical-align: middle;
 }
 
-ul,
-ol {
-	margin: 0 0 $spacer ($spacer * 2);
-	padding: 0;
+dl,
+ol,
+ul {
+	margin: 0 0 $spacer;
+}
 
-	& & {
-		margin-bottom: 0;
-		margin-left: $spacer;
-	}
+ol,
+ul {
+	padding-left: ($spacer * 2);
 }
 
 table {
