@@ -7,6 +7,7 @@
 //      - Element Invisible
 //      - Element Visible
 //      - Text Hidden
+//      - Text Invisible
 //  * Centering
 //      - Absolute
 //      - Horizontal
@@ -101,12 +102,14 @@
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
+}
 
-	// font: 0/0 a;
-	// color: transparent;
-	// text-shadow: none;
-	// background-color: transparent;
-	// border: 0;
+@mixin text-invisible {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
 }
 
 
