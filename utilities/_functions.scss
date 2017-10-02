@@ -74,7 +74,7 @@
 $spacer: 20px !default;
 
 @function spacer( $amount ) {
-	@return $spacer * $amount;
+	@return $spacer * strip-unit( $amount );
 }
 
 
