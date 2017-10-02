@@ -71,10 +71,10 @@
 //
 // **************************************************
 
-$spacer-base: 20px !default;
+$spacer: 20px !default;
 
 @function spacer( $amount ) {
-	@return $spacer-base * $amount;
+	@return $spacer * $amount;
 }
 
 
