@@ -4,6 +4,7 @@
 //  * Pseudo
 //  * Unicode
 //  * Strip unit
+//  * Spacer
 //  * Conversion
 //      - Pixel to em
 //      - Pixel to rem
@@ -61,6 +62,19 @@
 
 @function strip-unit( $value ) {
 	@return $value / ( $value * 0 + 1 );
+}
+
+
+
+//
+// Spacer
+//
+// **************************************************
+
+$spacer-base: 20px !default;
+
+@function spacer( $amount ) {
+	@return $spacer-base * $amount;
 }
 
 
