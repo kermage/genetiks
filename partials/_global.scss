@@ -35,16 +35,3 @@ body {
 		font-size: 0.875rem;
 	}
 }
-
-// Remove the touch delay
-a,
-area,
-button,
-[role='button'],
-input:not([type='range']),
-label,
-select,
-summary,
-textarea {
-	touch-action: manipulation;
-}
