@@ -74,6 +74,7 @@
 
 @mixin invisible {
 	clip: rect( 0, 0, 0, 0 );
+	clip-path: inset( 50% );
 	height: 1px;
 	overflow: hidden;
 	position: absolute;
@@ -87,6 +88,7 @@
 
 @mixin visible {
 	clip: auto;
+	clip-path: none;
 	height: auto;
 	overflow: visible;
 	position: static;
