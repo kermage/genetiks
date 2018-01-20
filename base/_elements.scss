@@ -38,6 +38,12 @@ td {
 	padding: ($spacer / 2);
 }
 
+pre {
+	margin: 0 0 $spacer;
+	overflow: auto;
+	-ms-overflow-style: scrollbar;
+}
+
 figure {
 	margin: 0 0 $spacer;
 }
