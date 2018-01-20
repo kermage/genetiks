@@ -4,8 +4,9 @@
 
 // Accessibility
 .screen-reader-text {
-	@include invisible();
+	@include visually-hidden();
 
+	&:active,
 	&:focus {
 		@include visible();
 	}
