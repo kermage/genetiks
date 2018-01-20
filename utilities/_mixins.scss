@@ -70,6 +70,7 @@
 	overflow: hidden;
 	position: absolute;
 	width: 1px;
+	white-space: nowrap;
 }
 
 
@@ -84,6 +85,7 @@
 	overflow: visible;
 	position: static;
 	width: auto;
+	white-space: normal;
 }
 
 
