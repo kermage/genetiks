@@ -155,6 +155,15 @@
 	text-rendering: auto;
 }
 
+@mixin fa5( $type: 'Solid', $icon: null ) {
+	@if( $icon != null ) {
+		content: unicode( $icon );
+	}
+
+	font-family: 'Font Awesome 5 ' + $type;
+	display: none;
+}
+
 
 //
 // Overflow
