@@ -3,6 +3,17 @@
 //
 // **************************************************
 
+//
+// Retrieve material ui color value from map
+//
+
+@function mui-color( $name, $variant: '500' ) {
+	$name: quote( $name );
+	$variant: quote( $variant );
+	@return map-get( map-get( $mui-colors, $name ), $variant );
+}
+
+
 // sass-lint:disable hex-length
 $mui-colors: (
 	'red': (

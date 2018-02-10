@@ -17,7 +17,6 @@
 //  * Color
 //      - Mix amount of black
 //      - Mix amount of white
-//      - Retrieve material ui color
 //  * Breakpoint
 //      - Return minimum breakpoint width
 //      - Return maximum breakpoint width
@@ -232,17 +231,6 @@ $rem-base: 16px !default;
 
 @function tint( $color, $percent: 50% ) {
 	@return mix( #fff, $color, $percent );
-}
-
-
-//
-// Retrieve material ui color value from map
-//
-
-@function mui-color( $name, $variant: '500' ) {
-	$name: quote( $name );
-	$variant: quote( $variant );
-	@return map-get( map-get( $mui-colors, $name ), $variant );
 }
 
 
