@@ -15,6 +15,7 @@
 //  * Type
 //      - FontAwesome
 //      - Overflow
+//      - Vertical Rhythm
 //  * Selector
 //      - Placeholder
 //      - Selection
@@ -175,6 +176,24 @@
 	white-space: nowrap;
 }
 
+
+//
+// Vertical Rhythm
+//
+
+@mixin vertical-rhythm( $size ) {
+	$base-value: strip-unit( px( $size ) );
+	$line-value: strip-unit( px( $line-height-base, $rem-base ) );
+
+	$span: ceil( $base-value / $line-value );
+
+	@if ( ( ( $span * $line-value ) - $base-value ) < 2 ) {
+		$span: $span + 1;
+	}
+
+	font-size: $size;
+	line-height: $span * $line-value / $base-value;
+}
 
 
 //
