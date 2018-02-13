@@ -182,8 +182,8 @@
 //
 
 @mixin vertical-rhythm( $size ) {
-	$base-value: strip-unit( px( $size ) );
-	$line-value: strip-unit( px( $line-height-base, $rem-base ) );
+	$base-value: px( $size );
+	$line-value: px( $line-height-base, $rem-base );
 
 	$span: ceil( $base-value / $line-value );
 
