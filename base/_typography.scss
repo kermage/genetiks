@@ -14,22 +14,22 @@ h6 {
 }
 
 h1 {
-	font-size: $h1-font-size;
+	@include vertical-rhythm( $h1-font-size );
 }
 h2 {
-	font-size: $h2-font-size;
+	@include vertical-rhythm( $h2-font-size );
 }
 h3 {
-	font-size: $h3-font-size;
+	@include vertical-rhythm( $h3-font-size );
 }
 h4 {
-	font-size: $h4-font-size;
+	@include vertical-rhythm( $h4-font-size );
 }
 h5 {
-	font-size: $h5-font-size;
+	@include vertical-rhythm( $h5-font-size );
 }
 h6 {
-	font-size: $h6-font-size;
+	@include vertical-rhythm( $h6-font-size );
 }
 
 a {
