@@ -132,10 +132,13 @@ $rem-base: 16px !default;
 	$value: strip-unit( $value );
 
 	@if $unit == 'em' {
-		$base: strip-unit( $em-base );
+		$base: $em-base;
 	} @else if $unit == 'rem' {
-		$base: strip-unit( $rem-base );
+		$base: $rem-base;
 	}
+
+	$base: strip-unit( $base );
+
 	@return $value * $base * 1px;
 }
 
