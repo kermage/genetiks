@@ -46,7 +46,6 @@ $breakpoints: (
 $body-background: #f3f3f3;
 $body-color:      #848484;
 $spacer:          1rem;
-$indent-amount:   $spacer;
 $border-radius:   0.25em;
 
 $link-color:       #f89406;
@@ -69,7 +68,7 @@ $line-height-base: 1.5;
 
 $headings-font-family: 'Open Sans', sans-serif;
 $headings-font-weight: 600;
-$headings-color:       #272727;
+$headings-color:       inherit;
 
 $h1-font-size: $font-size-base * 2.5;
 $h2-font-size: $font-size-base * 2;
