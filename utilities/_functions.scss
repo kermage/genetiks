@@ -9,6 +9,7 @@
 //      - Pixel to em
 //      - Pixel to rem
 //      - Back to px
+//      - Calculate the baseline grid
 //      - Map to List
 //  * List
 //      - Prepend a value
@@ -94,6 +95,7 @@ $spacer: 20px !default;
 // **************************************************
 
 $font-size-base: 16px !default;
+$line-height-base: 1.5 !default;
 
 
 //
@@ -137,6 +139,24 @@ $font-size-base: 16px !default;
 	$base: strip-unit( $base );
 
 	@return $value * $base * 1px;
+}
+
+
+//
+// Calculate the baseline grid
+//
+
+@function base-line( $size: $font-size-base ) {
+	$base-value: px( $size );
+	$line-value: px( $line-height-base, $font-size-base );
+
+	$span: ceil( $base-value / $line-value );
+
+	@if ( ( ( $span * $line-value ) - $base-value ) < 2 ) {
+		$span: $span + 1;
+	}
+
+	@return $span * $line-value / $base-value;
 }
 
 

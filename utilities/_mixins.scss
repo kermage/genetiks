@@ -182,17 +182,8 @@
 //
 
 @mixin vertical-rhythm( $size ) {
-	$base-value: px( $size );
-	$line-value: px( $line-height-base, $font-size-base );
-
-	$span: ceil( $base-value / $line-value );
-
-	@if ( ( ( $span * $line-value ) - $base-value ) < 2 ) {
-		$span: $span + 1;
-	}
-
 	font-size: $size;
-	line-height: $span * $line-value / $base-value;
+	line-height: base-line( $size );
 }
 
 
