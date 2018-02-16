@@ -11,9 +11,6 @@
 html {
 	// Use percentage by default to inherit the value from the user's browser settings
 	font-size: ( strip-unit( $font-size-base ) / 16 ) * 100%;
-
-	// Use a "normal", non-overlapping, non-auto-hiding scrollbar; Edge 12+, Internet Explorer 11-
-	-ms-overflow-style: scrollbar; // sass-lint:disable-line no-vendor-prefixes
 }
 
 // Opinionated defaults
