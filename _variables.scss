@@ -1,7 +1,6 @@
 // ==================================================
 // TABLE OF CONTENTS
 // --------------------------------------------------
-//  * Unit base
 //  * Breakpoints
 //  * Styles
 //      - Base
@@ -14,16 +13,6 @@
 //      - Buttons
 //      - Inputs
 // ==================================================
-
-
-
-//
-// Unit base
-//
-// **************************************************
-
-$em-base:  16px;
-$rem-base: 16px;
 
 
 
@@ -69,7 +58,7 @@ $link-hover-color: shade( $link-color, 20 );
 //
 
 $font-family-base: 'Open Sans', sans-serif;
-$font-size-base:   $rem-base;
+$font-size-base:   16px;
 $font-weight-base: 400;
 $line-height-base: 1.5;
 

@@ -93,15 +93,14 @@ $spacer: 20px !default;
 //
 // **************************************************
 
-$em-base:  16px !default;
-$rem-base: 16px !default;
+$font-size-base: 16px !default;
 
 
 //
 // Pixel to em
 //
 
-@function em( $value, $base: $em-base ) {
+@function em( $value, $base: $font-size-base ) {
 	$value: px( $value );
 	$value: strip-unit( $value );
 	$base: strip-unit( $base );
@@ -114,7 +113,7 @@ $rem-base: 16px !default;
 // Pixel to rem
 //
 
-@function rem( $value, $base: $rem-base ) {
+@function rem( $value, $base: $font-size-base ) {
 	$value: px( $value );
 	$value: strip-unit( $value );
 	$base: strip-unit( $base );
@@ -131,10 +130,8 @@ $rem-base: 16px !default;
 	$unit: unit( $value );
 	$value: strip-unit( $value );
 
-	@if $unit == 'em' {
-		$base: $em-base;
-	} @else if $unit == 'rem' {
-		$base: $rem-base;
+	@if ( ( $unit == 'em') or ( $unit == 'rem' ) ) {
+		$base: $font-size-base;
 	}
 
 	$base: strip-unit( $base );
