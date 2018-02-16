@@ -1,7 +1,12 @@
 # Sass-Libs --
-> *"Toolkit for building a modern and flexible website"*
+> *"A just right amount of clean but powerful toolkit"*
 
 The idea is not to be a framework but as a starting point with predefined and opinionated styleguide.
+
+This only includes the minimum styles and useful utilities required to build a performant website.
+- Modern base styles
+- Responsive layout system
+- Typography vertical rhythm
 
 ## Contents
 ```
