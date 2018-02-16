@@ -15,6 +15,7 @@
 //    - Colors
 //    - Variables
 //  * Partials
+//    - Normalize
 //    - Print
 //    - Global
 //    - WordPress
@@ -23,6 +24,15 @@
 //    - Elements
 //    - Fields
 //    - Buttons
+//  * Layouts
+//    - Header
+//    - Navigation
+//    - Content
+//    - Footer
+//  * Pages
+//    - Home
+//    - About
+//    - Contact
 // ==================================================
 
 
@@ -45,6 +55,7 @@
 //
 // **************************************************
 
+// @import "../../node_modules/normalize.css/normalize";
 @import 'partials/print';
 @import 'partials/global';
 @import 'partials/wordpress';
@@ -59,3 +70,24 @@
 @import 'base/elements';
 @import 'base/fields';
 @import 'base/buttons';
+
+
+//
+// Layouts
+//
+// **************************************************
+
+// @import 'layouts/header';
+// @import 'layouts/navigation';
+// @import 'layouts/content';
+// @import 'layouts/footer';
+
+
+//
+// Pages
+//
+// **************************************************
+
+// @import 'pages/home';
+// @import 'pages/about';
+// @import 'pages/contact';
