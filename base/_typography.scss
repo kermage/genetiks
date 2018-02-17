@@ -52,8 +52,8 @@ a {
 
 	&:hover {
 		color: $link-hover-color;
-		}
 	}
+}
 
 blockquote,
 q {
@@ -75,7 +75,7 @@ blockquote {
 		content: '\201C';
 		position: absolute;
 		margin-top: -0.25em;
-		left: 0.125em;
+		left: 0.15em;
 		color: $gray;
 		font-family: Georgia, serif;
 		font-size: 3em;
@@ -84,12 +84,13 @@ blockquote {
 }
 
 q {
-	padding: 0 0.75em;
+	display: inline-block;
+	padding: 0 0.625em;
 
 	&::before,
 	&::after {
 		font-family: Georgia, serif;
-		font-size: 1.5em;
+		font-size: 1.25em;
 		position: absolute;
 		margin-top: -0.125em;
 	}
