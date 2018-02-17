@@ -6,25 +6,16 @@
 @media print {
 	*,
 	*::before,
-	*::after,
-	*::first-letter,
-	*::first-line {
-		background: transparent !important;
-		// color: #000 !important;
+	*::after {
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}
 
-	@page {
-		margin: 0.5cm;
-	}
-
-	// Display the URL of a link after the text
-	a,
-	a:visited {
+	a {
 		text-decoration: underline;
 	}
 
+	// Display the URL of a link after the text
 	a[href]::after {
 		content: ' (' attr( href ) ') ';
 	}
@@ -58,10 +49,6 @@
 	tr,
 	img {
 		page-break-inside: avoid;
-	}
-
-	img {
-		max-width: 100% !important;
 	}
 
 	p,
