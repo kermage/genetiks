@@ -143,7 +143,7 @@ $line-height-base: 1.5 !default;
 //
 // **************************************************
 
-$spacer: 20px !default;
+$spacer: rem( $font-size-base * $line-height-base ) !default;
 
 
 //
