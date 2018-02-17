@@ -3,9 +3,9 @@
 // --------------------------------------------------
 //  * Breakpoints
 //  * Styles
-//      - Base
 //      - Typography
 //      - Headings
+//      - Base
 //  * Colors
 //      - Grayscale
 //      - General
@@ -40,19 +40,6 @@ $breakpoints: (
 
 
 //
-// Base
-//
-
-$body-background: mui-color( grey, 100 );
-$body-color:      mui-color( grey, 800 );
-$spacer:          rem( $font-size-base * $line-height-base );
-$border-radius:   0.25em;
-
-$link-color:       mui-color( red, 700 );
-$link-hover-color: shade( $link-color, 15 );
-
-
-//
 // Typography
 //
 
@@ -76,6 +63,19 @@ $h3-font-size: em( $font-size-base * 1.75 );
 $h4-font-size: em( $font-size-base * 1.375 );
 $h5-font-size: em( $font-size-base * 1.125 );
 $h6-font-size: em( $font-size-base );
+
+
+//
+// Base
+//
+
+$body-background: mui-color( grey, 100 );
+$body-color:      mui-color( grey, 800 );
+$spacer:          rem( $font-size-base * $line-height-base );
+$border-radius:   0.25em;
+
+$link-color:       mui-color( red, 700 );
+$link-hover-color: shade( $link-color, 15 );
 
 
 
