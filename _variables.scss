@@ -45,7 +45,7 @@ $breakpoints: (
 
 $body-background: mui-color( grey, 100 );
 $body-color:      mui-color( grey, 800 );
-$spacer:          1rem;
+$spacer:          rem( $font-size-base * $line-height-base );
 $border-radius:   0.25em;
 
 $link-color:       mui-color( red, 700 );
