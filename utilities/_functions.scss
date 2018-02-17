@@ -4,13 +4,14 @@
 //  * Pseudo
 //  * Unicode
 //  * Strip unit
-//  * Spacer
 //  * Conversion
 //      - Pixel to em
 //      - Pixel to rem
 //      - Back to px
-//      - Calculate the baseline grid
 //      - Map to List
+//  * Calculator
+//      - Baseline grid
+//      - Spacer
 //  * List
 //      - Prepend a value
 //      - Insert a value at index n
@@ -62,29 +63,6 @@
 
 @function strip-unit( $value ) {
 	@return $value / ( $value * 0 + 1 );
-}
-
-
-
-//
-// Spacer
-//
-// **************************************************
-
-$spacer: 20px !default;
-
-@function spacer( $amount: 1, $unit: null ) {
-	$value: $spacer;
-	$amount: strip-unit( $amount );
-
-	@if $unit == 'px' {
-		$value: px( $spacer );
-	} @else if $unit == 'em' {
-		$value: em( $spacer );
-	} @else if $unit == 'rem' {
-		$value: rem( $spacer );
-	}
-	@return $value * $amount;
 }
 
 
@@ -143,6 +121,51 @@ $line-height-base: 1.5 !default;
 
 
 //
+// Map to List
+//
+
+@function map-to-list( $value ) {
+	$keys: ();
+	$values: ();
+
+	@each $key, $val in $value {
+		$keys: append( $keys, $key );
+		$values: append( $values, $val );
+	}
+
+	@return zip( $keys, $values );
+}
+
+
+
+//
+// Calculator
+//
+// **************************************************
+
+$spacer: 20px !default;
+
+
+//
+// Spacer
+//
+
+@function spacer( $amount: 1, $unit: null ) {
+	$value: $spacer;
+	$amount: strip-unit( $amount );
+
+	@if $unit == 'px' {
+		$value: px( $spacer );
+	} @else if $unit == 'em' {
+		$value: em( $spacer );
+	} @else if $unit == 'rem' {
+		$value: rem( $spacer );
+	}
+	@return $value * $amount;
+}
+
+
+//
 // Calculate the baseline grid
 //
 
@@ -157,23 +180,6 @@ $line-height-base: 1.5 !default;
 	}
 
 	@return $span * $line-value / $base-value;
-}
-
-
-//
-// Map to List
-//
-
-@function map-to-list( $value ) {
-	$keys: ();
-	$values: ();
-
-	@each $key, $val in $value {
-		$keys: append( $keys, $key );
-		$values: append( $values, $val );
-	}
-
-	@return zip( $keys, $values );
 }
 
 
