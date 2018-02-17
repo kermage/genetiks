@@ -161,6 +161,7 @@ $spacer: 20px !default;
 	} @else if $unit == 'rem' {
 		$value: rem( $spacer );
 	}
+
 	@return $value * $amount;
 }
 
@@ -277,6 +278,7 @@ $spacer: 20px !default;
 	@if map-has-key( $breakpoints, $query ) {
 		$value: map-get( $breakpoints, $query );
 	}
+
 	@return if( $value != 0, $value, null );
 }
 
@@ -300,6 +302,7 @@ $spacer: 20px !default;
 			$value: $value - 1;
 		}
 	}
+
 	@return $value;
 }
 
@@ -318,5 +321,6 @@ $spacer: 20px !default;
 		$query: if( $index < length( $names ), nth( $names, $index + 1 ), null );
 		$value: append( $value, break-until( $query ) );
 	}
+
 	@return $value;
 }

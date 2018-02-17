@@ -16,18 +16,23 @@ h6 {
 h1 {
 	@include vertical-rhythm( $h1-font-size );
 }
+
 h2 {
 	@include vertical-rhythm( $h2-font-size );
 }
+
 h3 {
 	@include vertical-rhythm( $h3-font-size );
 }
+
 h4 {
 	@include vertical-rhythm( $h4-font-size );
 }
+
 h5 {
 	@include vertical-rhythm( $h5-font-size );
 }
+
 h6 {
 	@include vertical-rhythm( $h6-font-size );
 }
