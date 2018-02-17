@@ -43,13 +43,13 @@ $breakpoints: (
 // Base
 //
 
-$body-background: #f3f3f3;
-$body-color:      #848484;
+$body-background: mui-color( grey, 100 );
+$body-color:      mui-color( grey, 800 );
 $spacer:          1rem;
 $border-radius:   0.25em;
 
-$link-color:       #f89406;
-$link-hover-color: shade( $link-color, 20 );
+$link-color:       mui-color( red, 700 );
+$link-hover-color: shade( $link-color, 15 );
 
 
 //
