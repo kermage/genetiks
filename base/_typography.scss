@@ -11,6 +11,7 @@ h6 {
 	color: $headings-color;
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
+	margin: $spacer 0;
 }
 
 h1 {
@@ -37,18 +38,22 @@ h6 {
 	@include vertical-rhythm( $h6-font-size );
 }
 
+p {
+	margin: $spacer 0;
+
+	a {
+		text-decoration: underline;
+	}
+}
+
 a {
 	color: $link-color;
 	text-decoration: none;
 
 	&:hover {
 		color: $link-hover-color;
-
-		p & {
-			text-decoration: underline;
 		}
 	}
-}
 
 blockquote,
 q {
