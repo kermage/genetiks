@@ -1,4 +1,4 @@
-# Sass-Libs --
+# SKit --
 > *"A just right amount of clean but powerful toolkit"*
 
 The idea is not to be a framework but as a starting point with predefined and opinionated styleguide.
