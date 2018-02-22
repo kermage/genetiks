@@ -221,19 +221,17 @@
 	display: block;
 	width: 0;
 	height: 0;
-	border: inset $size;
+	border-width: $size;
+	border-style: solid;
+	border-color: transparent;
 
 	@if( to-lower-case( $direction ) == 'up' ) {
-		border-color: transparent transparent $color;
-		border-bottom-style: solid;
+		border-bottom-color: $color;
 	} @else if( to-lower-case( $direction ) == 'down' ) {
-		border-color: $color transparent transparent;
-		border-top-style: solid;
+		border-top-color: $color;
 	} @else if( to-lower-case( $direction ) == 'left' ) {
-		border-color: transparent $color transparent transparent;
-		border-right-style: solid;
+		border-right-color: $color;
 	} @else if( to-lower-case( $direction ) == 'right' ) {
-		border-color: transparent transparent transparent $color;
-		border-left-style: solid;
+		border-left-color: $color;
 	}
 }
