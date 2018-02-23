@@ -45,7 +45,7 @@
 // **************************************************
 
 @mixin container( $width: 100% ) {
-	max-width: $width;
+	width: $width;
 	margin-left: auto;
 	margin-right: auto;
 }
