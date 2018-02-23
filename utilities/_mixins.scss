@@ -45,8 +45,6 @@
 // **************************************************
 
 @mixin container( $width: 100% ) {
-	@include clearfix();
-
 	max-width: $width;
 	margin-left: auto;
 	margin-right: auto;
