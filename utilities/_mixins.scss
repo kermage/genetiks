@@ -44,12 +44,12 @@
 //
 // **************************************************
 
-@mixin container( $width: 100% ) {
+@mixin container( $width: 100%, $spacer: spacer() ) {
 	width: $width;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: spacer();
-	padding-right: spacer();
+	padding-left: $spacer;
+	padding-right: $spacer;
 }
 
 
