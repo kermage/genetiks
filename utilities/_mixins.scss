@@ -44,7 +44,7 @@
 //
 // **************************************************
 
-@mixin container( $width: 100%, $spacer: spacer() ) {
+@mixin container( $width: 100%, $spacer: spacer( 0.5 ) ) {
 	width: $width;
 	margin-left: auto;
 	margin-right: auto;
@@ -233,5 +233,37 @@
 		border-right-color: $color;
 	} @else if( to-lower-case( $direction ) == 'right' ) {
 		border-left-color: $color;
+	}
+}
+
+@mixin block( $block ) {
+	.ais-#{$block} {
+		@content;
+	}
+}
+
+@mixin element( $element ) {
+	&--#{$element} {
+		@content;
+	}
+}
+
+@mixin modifier( $modifier ) {
+	&__#{$modifier} {
+		@content;
+	}
+}
+
+@mixin bem( $block, $element, $modifier: "" ) {
+	@include block( $block ) {
+		@include element( $element ) {
+			@if $modifier != "" {
+				@include modifier( $modifier ) {
+					@content;
+				}
+			} @else {
+				@content;
+			}
+		}
 	}
 }
