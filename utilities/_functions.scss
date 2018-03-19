@@ -4,6 +4,7 @@
 //  * Pseudo
 //  * Unicode
 //  * Strip unit
+//  * Clamp number
 //  * Conversion
 //      - Pixel to em
 //      - Pixel to rem
@@ -59,6 +60,17 @@
 
 @function strip-unit( $value ) {
 	@return $value / ( $value * 0 + 1 );
+}
+
+
+
+//
+// Clamp a number between two other numbers
+//
+// **************************************************
+
+@function clamp-number( $value, $min, $max ) {
+	@return min( max( $value, $min ), $max );
 }
 
 
