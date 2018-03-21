@@ -14,7 +14,7 @@
 //      - Vertical
 //  * Type
 //      - FontAwesome
-//      - Overflow
+//      - Truncate
 //      - Vertical Rhythm
 //  * Selector
 //      - Placeholder
@@ -167,10 +167,10 @@
 
 
 //
-// Overflow
+// Truncate
 //
 
-@mixin overflow {
+@mixin truncate {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
