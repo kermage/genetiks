@@ -6,7 +6,7 @@ The idea is not to be a framework but as a starting point with predefined and op
 This only includes the minimum styles and useful utilities required to build a performant website.
 - Modern base styles
 - Responsive layout system
-- Typography vertical rhythm
+- Fluid spacing; vertical rhythm
 
 ## Contents
 ```
@@ -18,6 +18,7 @@ This only includes the minimum styles and useful utilities required to build a p
 ├── partials/
 │  ├── _global.scss
 │  ├── _print.scss
+│  ├── _ready.scss
 │  └── _wordpress.scss
 ├── utilities/
 │  ├── _breakpoints.scss
@@ -30,6 +31,6 @@ This only includes the minimum styles and useful utilities required to build a p
 ```
 
 ## License
-Copyright &copy; 2017 [Gene Alyson Fortunado Torcende](https://github.com/kermage)
+Copyright &copy; 2018 [Gene Alyson Fortunado Torcende](https://github.com/kermage)
 
 Licensed under [MIT](LICENSE).
