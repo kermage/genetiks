@@ -26,10 +26,10 @@
 	}
 }
 
-.row {
+.grid {
 	@include flex-container();
 }
 
-.column {
+.cell {
 	@include flex-item();
 }
