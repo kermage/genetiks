@@ -101,7 +101,7 @@
 }
 
 @mixin text-invisible {
-	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+	// stylelint-disable-next-line font-family-no-missing-generic-family-keyword
 	font: 0/0 a;
 	color: transparent;
 	text-shadow: none;
@@ -149,7 +149,7 @@
 		content: unicode( $icon );
 	}
 
-	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+	// stylelint-disable-next-line font-family-no-missing-generic-family-keyword
 	font-family: 'FontAwesome';
 	font-style: normal;
 	font-weight: normal;
@@ -162,7 +162,7 @@
 		content: unicode( $icon );
 	}
 
-	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+	// stylelint-disable-next-line font-family-no-missing-generic-family-keyword
 	font-family: 'Font Awesome 5 ' + $type;
 	display: none;
 }
@@ -205,7 +205,7 @@
 	}
 
 	@each $selection in $selections {
-		/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+		// stylelint-disable-next-line selector-pseudo-class-no-unknown
 		&:#{ $selection } {
 			@content;
 		}
