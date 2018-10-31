@@ -48,7 +48,6 @@
 @import 'utilities/flexbox';
 @import 'utilities/mui-colors';
 
-@import 'variables';
 
 
 //
@@ -56,6 +55,7 @@
 //
 // **************************************************
 
+@import 'variables';
 // @import "../../node_modules/normalize.css/normalize";
 @import 'partials/print';
 @import 'partials/global';

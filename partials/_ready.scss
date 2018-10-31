@@ -7,21 +7,25 @@
 
 	@include break-from( small ) {
 		$width: map-get( $breakpoints, small );
+
 		max-width: rem( $width ) - $spacer;
 	}
 
 	@include break-from( medium ) {
 		$width: map-get( $breakpoints, medium );
+
 		max-width: rem( $width ) - $spacer;
 	}
 
 	@include break-from( large ) {
 		$width: map-get( $breakpoints, large );
+
 		max-width: rem( $width ) - $spacer;
 	}
 
 	@include break-from( xlarge ) {
 		$width: map-get( $breakpoints, xlarge );
+
 		max-width: rem( $width ) - $spacer;
 	}
 }

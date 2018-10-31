@@ -101,6 +101,7 @@
 }
 
 @mixin text-invisible {
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
 	font: 0/0 a;
 	color: transparent;
 	text-shadow: none;
@@ -118,18 +119,17 @@
 @mixin center( $position: null ) {
 	position: absolute;
 
-	@if( $position == null ) {
+	@if ( $position == null ) {
 		top: 50%;
 		left: 50%;
 		transform: translate( -50%, -50% );
-	} @else if( to-upper-case( $position ) == 'X' ) {
+	} @else if ( to-upper-case( $position ) == 'X' ) {
 		left: 50%;
 		transform: translateX( -50% );
-	} @else if( to-upper-case( $position ) == 'Y' ) {
+	} @else if ( to-upper-case( $position ) == 'Y' ) {
 		top: 50%;
 		transform: translateY( -50% );
 	}
-
 }
 
 
@@ -145,10 +145,11 @@
 //
 
 @mixin fa( $icon: null ) {
-	@if( $icon != null ) {
+	@if ( $icon != null ) {
 		content: unicode( $icon );
 	}
 
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
 	font-family: 'FontAwesome';
 	font-style: normal;
 	font-weight: normal;
@@ -157,10 +158,11 @@
 }
 
 @mixin fa5( $type: 'Solid', $icon: null ) {
-	@if( $icon != null ) {
+	@if ( $icon != null ) {
 		content: unicode( $icon );
 	}
 
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
 	font-family: 'Font Awesome 5 ' + $type;
 	display: none;
 }
@@ -196,13 +198,14 @@
 @mixin selector( $element ) {
 	$selections: ();
 
-	@if( to-lower-case( $element ) == 'placeholder' ) {
+	@if ( to-lower-case( $element ) == 'placeholder' ) {
 		$selections: ':-webkit-input-placeholder' ':-moz-placeholder' '-moz-placeholder' '-ms-input-placeholder';
-	} @else if( to-lower-case( $element ) == 'selection' ) {
+	} @else if ( to-lower-case( $element ) == 'selection' ) {
 		$selections: ':selection' ':-moz-selection';
 	}
 
 	@each $selection in $selections {
+		/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
 		&:#{ $selection } {
 			@content;
 		}
@@ -225,13 +228,13 @@
 	border-style: solid;
 	border-color: transparent;
 
-	@if( to-lower-case( $direction ) == 'up' ) {
+	@if ( to-lower-case( $direction ) == 'up' ) {
 		border-bottom-color: $color;
-	} @else if( to-lower-case( $direction ) == 'down' ) {
+	} @else if ( to-lower-case( $direction ) == 'down' ) {
 		border-top-color: $color;
-	} @else if( to-lower-case( $direction ) == 'left' ) {
+	} @else if ( to-lower-case( $direction ) == 'left' ) {
 		border-right-color: $color;
-	} @else if( to-lower-case( $direction ) == 'right' ) {
+	} @else if ( to-lower-case( $direction ) == 'right' ) {
 		border-left-color: $color;
 	}
 }

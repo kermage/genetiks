@@ -52,6 +52,7 @@
 
 .gallery {
 	@include flex-container();
+
 	margin-bottom: $spacer;
 }
 
