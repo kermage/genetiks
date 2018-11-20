@@ -20,6 +20,7 @@
 //      - Placeholder
 //      - Selection
 //  * Triangle
+//  * Embed
 // ==================================================
 
 
@@ -237,4 +238,29 @@
 	} @else if ( to-lower-case( $direction ) == 'right' ) {
 		border-left-color: $color;
 	}
+}
+
+
+
+//
+// Embed
+//
+// **************************************************
+
+@mixin embed-wrapper( $width, $height ) {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-top: ( $height / $width * 100% );
+}
+
+@mixin embed-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
 }
