@@ -47,6 +47,10 @@ figure {
 	margin: 0 0 $spacer;
 }
 
-iframe {
+audio,
+embed,
+iframe,
+object,
+video {
 	max-width: 100%;
 }
