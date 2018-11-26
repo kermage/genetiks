@@ -22,6 +22,7 @@ This only includes the minimum styles and useful utilities required to build a p
 │  └── _wordpress.scss
 ├── utilities/
 │  ├── _breakpoints.scss
+│  ├── _embeds.scss
 │  ├── _flexbox.scss
 │  ├── _functions.scss
 │  ├── _mixins.scss
