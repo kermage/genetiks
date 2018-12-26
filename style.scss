@@ -8,13 +8,6 @@
 // TABLE OF CONTENTS
 // --------------------------------------------------
 //  * Utilities
-//    - Functions
-//    - Mixins
-//    - Breakpoints
-//    - Flex Box
-//    - Embeds
-//    - Colors
-//    - Variables
 //  * Partials
 //    - Normalize
 //    - Print
@@ -43,12 +36,7 @@
 //
 // **************************************************
 
-@import 'utilities/functions';
-@import 'utilities/mixins';
-@import 'utilities/breakpoints';
-@import 'utilities/flexbox';
-@import 'utilities/embeds';
-@import 'utilities/mui-colors';
+@import 'utilities';
 
 
 
