@@ -27,6 +27,7 @@ This only includes the minimum styles and useful utilities required to build a p
 │  ├── _functions.scss
 │  ├── _mixins.scss
 │  └── _mui-colors.scss
+├── _utilities.scss
 ├── _variables.scss
 └── style.scss
 ```
