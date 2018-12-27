@@ -1,5 +1,5 @@
 # genetiks --
-> *"A just right amount of clean but powerful toolkit"*
+> *"A minimalist style sheet baseline to build upon"*
 
 The idea is not to be a framework but as a starting point with predefined and opinionated styleguide.
 
@@ -31,6 +31,17 @@ This only includes the minimum styles and useful utilities required to build a p
 ├── _variables.scss
 └── style.scss
 ```
+
+## Utilities
+> *"A just right amount of clean but powerful toolkit"*
+
+https://www.npmjs.com/package/genetiks
+
+### Install
+`npm install genetiks`
+
+### Usage
+`@import './node_modules/genetiks/utilities'`
 
 ## License
 Copyright &copy; 2018 [Gene Alyson Fortunado Torcende](https://github.com/kermage)
