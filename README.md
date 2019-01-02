@@ -44,6 +44,6 @@ https://www.npmjs.com/package/genetiks
 `@import './node_modules/genetiks/utilities'`
 
 ## License
-Copyright &copy; 2018 [Gene Alyson Fortunado Torcende](https://github.com/kermage)
+Copyright &copy; 2019 [Gene Alyson Fortunado Torcende](https://github.com/kermage)
 
 Licensed under [MIT](LICENSE).
