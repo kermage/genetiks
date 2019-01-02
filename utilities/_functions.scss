@@ -178,15 +178,17 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 
 @function base-line( $size: $font-size-base ) {
 	$base-value: px( $size );
-	$line-value: px( $line-height-base, $font-size-base );
+	$font-value: px( $font-size-base );
+	$line-value: px( $line-height-base );
+	$font-line: $font-value * $line-value;
 
-	$span: ceil( $base-value / $line-value );
+	$span: ceil( $base-value / $font-line );
 
-	@if ( ( ( $span * $line-value ) - $base-value ) < 2 ) {
+	@if ( ( ( $span * $font-line ) - $base-value ) < 2 ) {
 		$span: $span + 1;
 	}
 
-	@return $span * $line-value / $base-value;
+	@return $span * $font-line / $base-value;
 }
 
 
