@@ -10,7 +10,7 @@
 
 html {
 	// Use percentage by default to inherit the value from the user's browser settings
-	font-size: ( strip-unit( $font-size-base ) / 16 ) * 100%;
+	font-size: ( px( $font-size-base ) / 16px ) * 100%;
 }
 
 // Opinionated defaults

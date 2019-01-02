@@ -90,8 +90,7 @@ $line-height-base: 1.5 !default;
 
 @function em( $value, $base: $font-size-base ) {
 	$value: px( $value );
-	$value: strip-unit( $value );
-	$base: strip-unit( $base );
+	$base: px( $base );
 
 	@return $value / $base * 1em;
 }
@@ -103,8 +102,7 @@ $line-height-base: 1.5 !default;
 
 @function rem( $value, $base: $font-size-base ) {
 	$value: px( $value );
-	$value: strip-unit( $value );
-	$base: strip-unit( $base );
+	$base: px( $base );
 
 	@return $value / $base * 1rem;
 }
@@ -118,7 +116,7 @@ $line-height-base: 1.5 !default;
 	$unit: unit( $value );
 	$value: strip-unit( $value );
 
-	@if ( ( $unit == 'em') or ( $unit == 'rem' ) ) {
+	@if ( ( $unit == 'em' ) or ( $unit == 'rem' ) ) {
 		$base: $font-size-base;
 	}
 
