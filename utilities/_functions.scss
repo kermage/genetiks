@@ -122,6 +122,10 @@ $line-height-base: 1.5 !default;
 		$base: $font-size-base;
 	}
 
+	@if ( unit( $base ) != 'px' ) {
+		$base: 16px;
+	}
+
 	$base: strip-unit( $base );
 
 	@return $value * $base * 1px;
