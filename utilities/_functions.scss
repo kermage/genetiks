@@ -112,16 +112,12 @@ $line-height-base: 1.5 !default;
 // Back to px
 //
 
-@function px( $value, $base: 1 ) {
+@function px( $value, $base: $font-size-base ) {
 	$unit: unit( $value );
 	$value: strip-unit( $value );
 
 	@if ( ( $unit == 'em' ) or ( $unit == 'rem' ) ) {
-		$base: $font-size-base;
-	}
-
-	@if ( unit( $base ) != 'px' ) {
-		$base: 16px;
+		$base: $base * 16;
 	}
 
 	$base: strip-unit( $base );
