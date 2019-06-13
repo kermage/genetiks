@@ -28,6 +28,13 @@ li {
 	margin-bottom: ($spacer / 4);
 }
 
+li {
+	ol,
+	ul {
+		margin-top: ($spacer / 4);
+	}
+}
+
 table {
 	margin: 0 0 $spacer;
 	width: 100%;
