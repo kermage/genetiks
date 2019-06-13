@@ -23,6 +23,11 @@ ul {
 	padding-left: ($spacer * 2);
 }
 
+dd,
+li {
+	margin-bottom: ($spacer / 4);
+}
+
 table {
 	margin: 0 0 $spacer;
 	width: 100%;
