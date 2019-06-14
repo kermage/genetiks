@@ -51,9 +51,7 @@ $breakpoints: (
 @mixin break-only( $query ) {
 	$value: break-only( $query );
 
-	@if type-of( $value ) != list {
-		@media screen and ( min-width: $value ) and ( max-width: $value ) { @content; }
-	} @else if nth( $value, 1 ) != null and nth( $value, 2 ) != null {
+	@if nth( $value, 1 ) != null and nth( $value, 2 ) != null {
 		@media screen and ( min-width: nth( $value, 1 ) ) and ( max-width: nth( $value, 2 ) ) { @content; }
 	} @else if nth( $value, 1 ) == null {
 		@media screen and ( max-width: $value ) { @content; }
@@ -142,6 +140,8 @@ $breakpoints: (
 		$value: set-nth( $value, 1, $query );
 		$query: if( $index < length( $names ), nth( $names, $index + 1 ), null );
 		$value: append( $value, $query );
+	} @else if type-of( $query ) == 'number' {
+		$value: $query $query;
 	}
 
 	@if map-has-key( $breakpoints, nth( $value, 1 ) ) {
