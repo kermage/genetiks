@@ -139,9 +139,17 @@ $breakpoints: (
 	$index: index( $names, $query );
 
 	@if map-has-key( $breakpoints, $query ) {
-		$value: set-nth( $value, 1, break-from( $query ) );
+		$value: set-nth( $value, 1, $query );
 		$query: if( $index < length( $names ), nth( $names, $index + 1 ), null );
-		$value: append( $value, break-until( $query ) );
+		$value: append( $value, $query );
+	}
+
+	@if map-has-key( $breakpoints, nth( $value, 1 ) ) {
+		$value: set-nth( $value, 1, break-from( nth( $value, 1 ) ) );
+	}
+
+	@if map-has-key( $breakpoints, nth( $value, 2 ) ) {
+		$value: set-nth( $value, 2, break-until( nth( $value, 2 ) ) );
 	}
 
 	@return $value;
