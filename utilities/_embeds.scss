@@ -11,8 +11,12 @@
 
 @mixin embed-wrapper( $width, $height ) {
 	position: relative;
-	height: 0;
-	padding-top: ( $height / $width * 100% );
+
+	&::after {
+		content: '';
+		display: block;
+		padding-top: ( $height / $width * 100% );
+	}
 }
 
 
