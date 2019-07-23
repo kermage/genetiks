@@ -7,6 +7,7 @@ This only includes the minimum styles and useful utilities required to build a p
 - Modern base styles
 - Responsive layout system
 - Fluid spacing; vertical rhythm
+- Write consistent and readable code
 
 ## Contents
 ```
@@ -15,6 +16,8 @@ This only includes the minimum styles and useful utilities required to build a p
 │  ├── _elements.scss
 │  ├── _fields.scss
 │  └── _typography.scss
+├── config/
+│  ├── index.js
 ├── partials/
 │  ├── _global.scss
 │  ├── _print.scss
