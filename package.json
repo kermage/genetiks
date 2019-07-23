@@ -4,6 +4,7 @@
   "description": "A minimalist style sheet baseline to build upon",
   "keywords": [
     "sass",
+    "stylelint-config",
     "toolkit"
   ],
   "license": "MIT",
@@ -12,6 +13,7 @@
     "email": "genealyson.torcende@gmail.com"
   },
   "files": [
+    "config/",
     "utilities/",
     "_utilities.scss"
   ],
