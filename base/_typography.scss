@@ -41,10 +41,6 @@ h6 {
 p {
 	margin: 0 0 $spacer;
 
-	a {
-		text-decoration: underline;
-	}
-
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -53,6 +49,10 @@ p {
 a {
 	color: $link-color;
 	text-decoration: none;
+
+	p & {
+		text-decoration: underline;
+	}
 
 	&:hover {
 		color: $link-hover-color;
