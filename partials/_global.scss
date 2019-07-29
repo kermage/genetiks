@@ -9,7 +9,7 @@
 }
 
 html {
-	// Use percentage by default to inherit the value from the user's browser settings
+	// Use percentage to inherit the value from the user's browser settings
 	font-size: ( px( $font-size-base ) / 16px ) * 100%;
 }
 
