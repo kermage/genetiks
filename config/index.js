@@ -30,9 +30,18 @@ module.exports = {
 			}
 		],
 		'function-parentheses-space-inside': 'always',
+		'function-url-quotes': [
+			'always',
+			{
+				'except': [
+					'empty'
+				]
+			}
+		],
 		'indentation': 'tab',
 		'max-empty-lines': 3,
 		'media-feature-parentheses-space-inside': 'always',
+		'selector-pseudo-class-parentheses-space-inside': 'always',
 		'scss/at-rule-no-unknown': true,
 		'value-list-max-empty-lines': 1
 	}
