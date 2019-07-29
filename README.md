@@ -46,6 +46,13 @@ https://www.npmjs.com/package/genetiks
 ### Usage
 `@import './node_modules/genetiks/utilities'`
 
+#### Stylelint
+```
+{
+  "extends": "genetiks/config"
+}
+```
+
 ## License
 Copyright &copy; 2019 [Gene Alyson Fortunado Torcende](https://github.com/kermage)
 
