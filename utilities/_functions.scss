@@ -123,10 +123,10 @@ $line-height-base: 1.5 !default;
 	$unit: unit( $base );
 
 	@if ( ( $unit == 'em' ) or ( $unit == 'rem' ) ) {
-		$base: 16 * strip-unit( $base );
+		$base: 16 * $base;
 	}
 
-	@return $value * $base * 1px;
+	@return $value * strip-unit( $base ) * 1px;
 }
 
 
