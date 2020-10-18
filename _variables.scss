@@ -2,13 +2,13 @@
 // TABLE OF CONTENTS
 // --------------------------------------------------
 //  * Breakpoints
+//  * Colors
+//      - Grayscale
+//      - General
 //  * Styles
 //      - Typography
 //      - Headings
 //      - Base
-//  * Colors
-//      - Grayscale
-//      - General
 //  * Lists
 //      - Buttons
 //      - Inputs
@@ -30,57 +30,6 @@ $breakpoints: (
 	xlarge:  em( 1200px ),
 	xxlarge: em( 1440px )
 );
-
-
-
-//
-// Styles
-//
-// **************************************************
-
-$font-weight-normal:    400;
-$font-weight-medium:    500;
-$font-weight-semibold:  600;
-$font-weight-bold:      700;
-$font-weight-extrabold: 800;
-$font-weight-black:     900;
-
-
-//
-// Typography
-//
-
-$font-family-base: 'Open Sans', sans-serif;
-$font-size-base:   16px;
-$line-height-base: 1.5;
-
-
-//
-// Headings
-//
-
-$headings-font-family: 'Open Sans', sans-serif;
-$headings-color:       inherit;
-
-$h1-font-size: em( $font-size-base * 2.875 );
-$h2-font-size: em( $font-size-base * 2.25 );
-$h3-font-size: em( $font-size-base * 1.75 );
-$h4-font-size: em( $font-size-base * 1.375 );
-$h5-font-size: em( $font-size-base * 1.125 );
-$h6-font-size: em( $font-size-base );
-
-
-//
-// Base
-//
-
-$body-background: mui-color( grey, 100 );
-$body-color:      mui-color( grey, 800 );
-$spacer:          rem( $font-size-base * $line-height-base );
-$border-radius:   0.25em;
-
-$link-color:       mui-color( red, 700 );
-$link-hover-color: shade( $link-color, 15 );
 
 
 
@@ -117,6 +66,57 @@ $aqua:   #7fdbff;
 $olive:  #3d9970;
 $lime:   #01ff70;
 $maroon: #85144b;
+
+
+
+//
+// Styles
+//
+// **************************************************
+
+$font-weight-normal:    400;
+$font-weight-medium:    500;
+$font-weight-semibold:  600;
+$font-weight-bold:      700;
+$font-weight-extrabold: 800;
+$font-weight-black:     900;
+
+
+//
+// Typography
+//
+
+$font-family-base: 'Open Sans', sans-serif;
+$font-size-base:   16px;
+$line-height-base: 1.5;
+
+
+//
+// Headings
+//
+
+$headings-font-family: inherit;
+$headings-color:       inherit;
+
+$h1-font-size: em( $font-size-base * 2.875 );
+$h2-font-size: em( $font-size-base * 2.25 );
+$h3-font-size: em( $font-size-base * 1.75 );
+$h4-font-size: em( $font-size-base * 1.375 );
+$h5-font-size: em( $font-size-base * 1.125 );
+$h6-font-size: em( $font-size-base );
+
+
+//
+// Base
+//
+
+$body-background: mui-color( grey, 100 );
+$body-color:      mui-color( grey, 800 );
+$spacer:          rem( $font-size-base * $line-height-base );
+$border-radius:   0.25em;
+
+$link-color:       mui-color( red, 700 );
+$link-hover-color: shade( $link-color, 15 );
 
 
 
