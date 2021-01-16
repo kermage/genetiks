@@ -21,14 +21,21 @@
 //
 // **************************************************
 
+$screen-xsmall:  420px;
+$screen-small:   576px;
+$screen-medium:  768px;
+$screen-large:   992px;
+$screen-xlarge:  1200px;
+$screen-xxlarge: 1440px;
+
 $breakpoints: (
 	xxsmall: 0,
-	xsmall:  420px,
-	small:   576px,
-	medium:  768px,
-	large:   992px,
-	xlarge:  1200px,
-	xxlarge: 1440px
+	xsmall:  $screen-xsmall,
+	small:   $screen-small,
+	medium:  $screen-medium,
+	large:   $screen-large,
+	xlarge:  $screen-xlarge,
+	xxlarge: $screen-xxlarge
 );
 
 
