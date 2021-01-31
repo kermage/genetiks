@@ -48,7 +48,7 @@
 // **************************************************
 
 @function unicode( $string ) {
-	@return unquote( '"' ) + unquote( str-insert( $string, '\\', 1 ) ) + unquote( '"' );
+	@return unquote( '"' ) + unquote( str-insert( #{$string}, '\\', 1 ) ) + unquote( '"' );
 }
 
 

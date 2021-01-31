@@ -8,8 +8,8 @@
 //
 
 @function mui-color( $name, $variant: '500' ) {
-	$name: quote( $name );
-	$variant: quote( $variant );
+	$name: quote( #{$name} );
+	$variant: quote( #{$variant} );
 
 	@return map-get( map-get( $mui-colors, $name ), $variant );
 }
