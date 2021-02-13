@@ -27,7 +27,14 @@
     "stylelint-scss": "^3.18.0"
   },
   "devDependencies": {
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.7",
     "stylelint": "^13.9.0"
+  },
+  "scripts": {
+    "sass": "sass style.scss css/style.css",
+    "postcss": "postcss css/style.css --replace",
+    "test": "npm run sass && npm run postcss"
   },
   "peerDependencies": {
     "stylelint": "^10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
