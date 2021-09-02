@@ -3,6 +3,11 @@
 //
 // **************************************************
 
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+
 $breakpoints: (
 	xxsmall: 0,
 	xsmall:  420px,
@@ -51,11 +56,11 @@ $breakpoints: (
 @mixin break-only( $query ) {
 	$value: break-only( $query );
 
-	@if nth( $value, 1 ) != null and nth( $value, 2 ) != null {
-		@media screen and ( min-width: nth( $value, 1 ) ) and ( max-width: nth( $value, 2 ) ) { @content; }
-	} @else if nth( $value, 1 ) == null {
+	@if list.nth( $value, 1 ) != null and list.nth( $value, 2 ) != null {
+		@media screen and ( min-width: list.nth( $value, 1 ) ) and ( max-width: list.nth( $value, 2 ) ) { @content; }
+	} @else if list.nth( $value, 1 ) == null {
 		@media screen and ( max-width: $value ) { @content; }
-	} @else if nth( $value, 2 ) == null {
+	} @else if list.nth( $value, 2 ) == null {
 		@media screen and ( min-width: $value ) { @content; }
 	}
 }
@@ -66,11 +71,11 @@ $breakpoints: (
 //
 
 @mixin break( $value ) {
-	$key: nth( $value, 1 );
-	$query: if( length( $value ) > 2, unset-nth( $value, 1 ), nth( $value, 2 ) );
+	$key: list.nth( $value, 1 );
+	$query: if( list.length( $value ) > 2, unset-nth( $value, 1 ), list.nth( $value, 2 ) );
 	$accepted: ( 'from', 'until', 'only' );
 
-	@if index( $accepted, $key ) {
+	@if list.index( $accepted, $key ) {
 		@if $key == 'from' {
 			@include break-from( $query ) {
 				@content;
@@ -95,8 +100,8 @@ $breakpoints: (
 @function break-from( $query ) {
 	$value: $query;
 
-	@if map-has-key( $breakpoints, $query ) {
-		$value: map-get( $breakpoints, $query );
+	@if map.has-key( $breakpoints, $query ) {
+		$value: map.get( $breakpoints, $query );
 	}
 
 	@return if( $value != 0, $value, null );
@@ -110,9 +115,9 @@ $breakpoints: (
 @function break-until( $query ) {
 	$value: $query;
 
-	@if map-has-key( $breakpoints, $query ) {
-		$value: map-get( $breakpoints, $query );
-		$unit: unit( $value );
+	@if map.has-key( $breakpoints, $query ) {
+		$value: map.get( $breakpoints, $query );
+		$unit: math.unit( $value );
 
 		@if $unit == 'em' {
 			$value: em( px( $value ) - 1 );
@@ -133,23 +138,23 @@ $breakpoints: (
 
 @function break-only( $query ) {
 	$value: $query;
-	$names: map-keys( $breakpoints );
-	$index: index( $names, $query );
+	$names: map.keys( $breakpoints );
+	$index: list.index( $names, $query );
 
-	@if map-has-key( $breakpoints, $query ) {
-		$value: set-nth( $value, 1, $query );
-		$query: if( $index < length( $names ), nth( $names, $index + 1 ), null );
-		$value: append( $value, $query );
-	} @else if type-of( $query ) == 'number' {
+	@if map.has-key( $breakpoints, $query ) {
+		$value: list.set-nth( $value, 1, $query );
+		$query: if( $index < list.length( $names ), list.nth( $names, $index + 1 ), null );
+		$value: list.append( $value, $query );
+	} @else if meta.type-of( $query ) == 'number' {
 		$value: $query $query;
 	}
 
-	@if map-has-key( $breakpoints, nth( $value, 1 ) ) {
-		$value: set-nth( $value, 1, break-from( nth( $value, 1 ) ) );
+	@if map.has-key( $breakpoints, list.nth( $value, 1 ) ) {
+		$value: list.set-nth( $value, 1, break-from( list.nth( $value, 1 ) ) );
 	}
 
-	@if map-has-key( $breakpoints, nth( $value, 2 ) ) {
-		$value: set-nth( $value, 2, break-until( nth( $value, 2 ) ) );
+	@if map.has-key( $breakpoints, list.nth( $value, 2 ) ) {
+		$value: list.set-nth( $value, 2, break-until( list.nth( $value, 2 ) ) );
 	}
 
 	@return $value;

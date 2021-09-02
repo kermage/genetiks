@@ -25,13 +25,13 @@ ul {
 
 dd,
 li {
-	margin-bottom: ($spacer / 4);
+	margin-bottom: ($spacer * 0.25);
 }
 
 li {
 	ol,
 	ul {
-		margin-top: ($spacer / 4);
+		margin-top: ($spacer * 0.25);
 	}
 }
 
@@ -47,7 +47,7 @@ caption {
 
 th,
 td {
-	padding: ($spacer / 2);
+	padding: ($spacer * 0.5);
 }
 
 pre {

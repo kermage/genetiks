@@ -3,15 +3,19 @@
 //
 // **************************************************
 
+@use "sass:map";
+@use "sass:string";
+
+
 //
 // Retrieve material ui color value from map
 //
 
 @function mui-color( $name, $variant: '500' ) {
-	$name: quote( #{$name} );
-	$variant: quote( #{$variant} );
+	$name: string.quote( #{$name} );
+	$variant: string.quote( #{$variant} );
 
-	@return map-get( map-get( $mui-colors, $name ), $variant );
+	@return map.get( map.get( $mui-colors, $name ), $variant );
 }
 
 

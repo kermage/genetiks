@@ -22,6 +22,7 @@
 //  * Triangle
 // ==================================================
 
+@use "sass:string";
 
 
 //
@@ -123,10 +124,10 @@
 		top: 50%;
 		left: 50%;
 		transform: translate( -50%, -50% );
-	} @else if ( to-upper-case( $position ) == 'X' ) {
+	} @else if ( string.to-upper-case( $position ) == 'X' ) {
 		left: 50%;
 		transform: translateX( -50% );
-	} @else if ( to-upper-case( $position ) == 'Y' ) {
+	} @else if ( string.to-upper-case( $position ) == 'Y' ) {
 		top: 50%;
 		transform: translateY( -50% );
 	}
@@ -198,9 +199,9 @@
 @mixin selector( $element ) {
 	$selections: ();
 
-	@if ( to-lower-case( $element ) == 'placeholder' ) {
+	@if ( string.to-lower-case( $element ) == 'placeholder' ) {
 		$selections: ':-webkit-input-placeholder' ':-moz-placeholder' '-moz-placeholder' '-ms-input-placeholder';
-	} @else if ( to-lower-case( $element ) == 'selection' ) {
+	} @else if ( string.to-lower-case( $element ) == 'selection' ) {
 		$selections: ':selection' ':-moz-selection';
 	}
 
@@ -228,13 +229,13 @@
 	border-style: solid;
 	border-color: transparent;
 
-	@if ( to-lower-case( $direction ) == 'up' ) {
+	@if ( string.to-lower-case( $direction ) == 'up' ) {
 		border-bottom-color: $color;
-	} @else if ( to-lower-case( $direction ) == 'down' ) {
+	} @else if ( string.to-lower-case( $direction ) == 'down' ) {
 		border-top-color: $color;
-	} @else if ( to-lower-case( $direction ) == 'left' ) {
+	} @else if ( string.to-lower-case( $direction ) == 'left' ) {
 		border-right-color: $color;
-	} @else if ( to-lower-case( $direction ) == 'right' ) {
+	} @else if ( string.to-lower-case( $direction ) == 'right' ) {
 		border-left-color: $color;
 	}
 }

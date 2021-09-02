@@ -22,6 +22,10 @@
 //      - Mix amount of white
 // ==================================================
 
+@use "sass:color";
+@use "sass:list";
+@use "sass:math";
+@use "sass:string";
 
 
 //
@@ -34,7 +38,7 @@
 
 	@each $value in $values {
 		$value: $value + ':' + $element;
-		$list: append( $list, $value, comma );
+		$list: list.append( $list, $value, comma );
 	}
 
 	@return $list;
@@ -48,7 +52,7 @@
 // **************************************************
 
 @function unicode( $string ) {
-	@return unquote( '"' ) + unquote( str-insert( #{$string}, '\\', 1 ) ) + unquote( '"' );
+	@return string.unquote( '"' ) + string.unquote( string.insert( #{$string}, '\\', 1 ) ) + string.unquote( '"' );
 }
 
 
@@ -59,7 +63,7 @@
 // **************************************************
 
 @function strip-unit( $value ) {
-	@return $value / ( $value * 0 + 1 );
+	@return math.div( $value, $value * 0 + 1 );
 }
 
 
@@ -70,7 +74,7 @@
 // **************************************************
 
 @function clamp-number( $value, $min, $max ) {
-	@return min( max( $value, $min ), $max );
+	@return math.min( math.max( $value, $min ), $max );
 }
 
 
@@ -92,7 +96,7 @@ $line-height-base: 1.5 !default;
 	$value: px( $value );
 	$base: px( $base );
 
-	@return $value / $base * 1em;
+	@return math.div( $value, $base ) * 1em;
 }
 
 
@@ -104,7 +108,7 @@ $line-height-base: 1.5 !default;
 	$value: px( $value );
 	$base: px( $base );
 
-	@return $value / $base * 1rem;
+	@return math.div( $value, $base ) * 1rem;
 }
 
 
@@ -113,14 +117,14 @@ $line-height-base: 1.5 !default;
 //
 
 @function px( $value, $base: $font-size-base ) {
-	$unit: unit( $value );
+	$unit: math.unit( $value );
 	$value: strip-unit( $value );
 
 	@if ( ( $unit == '' ) or ( $unit == 'px' ) ) {
 		$base: 1;
 	}
 
-	$unit: unit( $base );
+	$unit: math.unit( $base );
 
 	@if ( ( $unit == 'em' ) or ( $unit == 'rem' ) ) {
 		$base: 16 * $base;
@@ -139,11 +143,11 @@ $line-height-base: 1.5 !default;
 	$values: ();
 
 	@each $key, $val in $value {
-		$keys: append( $keys, $key );
-		$values: append( $values, $val );
+		$keys: list.append( $keys, $key );
+		$values: list.append( $values, $val );
 	}
 
-	@return zip( $keys, $values );
+	@return list.zip( $keys, $values );
 }
 
 
@@ -186,13 +190,13 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 	$line-value: px( $line-height-base );
 	$font-line: $font-value * $line-value;
 
-	$span: ceil( $base-value / $font-line );
+	$span: math.ceil( math.div( $base-value, $font-line ) );
 
 	@if ( ( ( $span * $font-line ) - $base-value ) < 2 ) {
 		$span: $span + 1;
 	}
 
-	@return $span * $font-line / $base-value;
+	@return math.div( $span * $font-line, $base-value );
 }
 
 
@@ -208,7 +212,7 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 //
 
 @function prepend( $list, $value ) {
-	@return join( $value, $list );
+	@return list.join( $value, $list );
 }
 
 
@@ -219,12 +223,12 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 @function insert-nth( $list, $index, $value ) {
 	$result: ();
 
-	@for $i from 1 through length( $list ) {
+	@for $i from 1 through list.length( $list ) {
 		@if $i == $index {
-			$result: append( $result, $value );
+			$result: list.append( $result, $value );
 		}
 
-		$result: append( $result, nth( $list, $i ) );
+		$result: list.append( $result, list.nth( $list, $i ) );
 	}
 
 	@return $result;
@@ -238,9 +242,9 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 @function unset-nth( $list, $index ) {
 	$result: ();
 
-	@for $i from 1 through length( $list ) {
+	@for $i from 1 through list.length( $list ) {
 		@if $i != $index {
-			$result: append( $result, nth( $list, $i ) );
+			$result: list.append( $result, list.nth( $list, $i ) );
 		}
 	}
 
@@ -260,7 +264,7 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 //
 
 @function shade( $color, $percent: 50% ) {
-	@return mix( #000, $color, $percent );
+	@return color.mix( #000, $color, $percent );
 }
 
 
@@ -269,5 +273,5 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 //
 
 @function tint( $color, $percent: 50% ) {
-	@return mix( #fff, $color, $percent );
+	@return color.mix( #fff, $color, $percent );
 }
