@@ -41,8 +41,21 @@ module.exports = {
 		'indentation': 'tab',
 		'max-empty-lines': 3,
 		'media-feature-parentheses-space-inside': 'always',
+		"no-invalid-position-at-import-rule": null,
 		'selector-pseudo-class-parentheses-space-inside': 'always',
-		'scss/at-rule-no-unknown': true,
+		"scss/at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": [
+					"tailwind",
+					"apply",
+					"layer",
+					"variants",
+					"responsive",
+					"screen"
+				]
+			}
+		],
 		'value-list-max-empty-lines': 1
 	}
 };
