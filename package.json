@@ -23,13 +23,13 @@
     "url": "https://github.com/kermage/genetiks.git"
   },
   "dependencies": {
+    "sass": "^1.39.0",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.20.1"
   },
   "devDependencies": {
-    "postcss-cli": "^8.3.1",
-    "sass": "^1.39.0",
-    "stylelint": "^13.13.1"
+    "postcss-cli": "^9.0.1"
   },
   "scripts": {
     "sass": "sass style.scss css/style.css",
@@ -39,9 +39,6 @@
   "browserslist": [
     "IE 10"
   ],
-  "peerDependencies": {
-    "stylelint": "^13.10.0"
-  },
   "optionalDependencies": {
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.6",
