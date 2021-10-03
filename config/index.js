@@ -29,7 +29,6 @@ module.exports = {
 				]
 			}
 		],
-		'function-parentheses-space-inside': 'always',
 		'function-url-quotes': [
 			'always',
 			{
@@ -39,10 +38,8 @@ module.exports = {
 			}
 		],
 		'indentation': 'tab',
-		'max-empty-lines': 3,
-		'media-feature-parentheses-space-inside': 'always',
+		'max-empty-lines': 2,
 		"no-invalid-position-at-import-rule": null,
-		'selector-pseudo-class-parentheses-space-inside': 'always',
 		"scss/at-rule-no-unknown": [
 			true,
 			{
