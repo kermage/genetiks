@@ -33,17 +33,16 @@
 //
 // **************************************************
 
-@function pseudo( $values, $element ) {
+@function pseudo($values, $element) {
 	$list: ();
 
 	@each $value in $values {
 		$value: $value + ':' + $element;
-		$list: list.append( $list, $value, comma );
+		$list: list.append($list, $value, comma);
 	}
 
 	@return $list;
 }
-
 
 
 //
@@ -51,10 +50,9 @@
 //
 // **************************************************
 
-@function unicode( $string ) {
-	@return string.unquote( '"' ) + string.unquote( string.insert( #{$string}, '\\', 1 ) ) + string.unquote( '"' );
+@function unicode($string) {
+	@return string.unquote('"') + string.unquote(string.insert(#{$string}, '\\', 1)) + string.unquote('"');
 }
-
 
 
 //
@@ -62,10 +60,9 @@
 //
 // **************************************************
 
-@function strip-unit( $value ) {
-	@return math.div( $value, $value * 0 + 1 );
+@function strip-unit($value) {
+	@return math.div($value, $value * 0 + 1);
 }
-
 
 
 //
@@ -73,10 +70,9 @@
 //
 // **************************************************
 
-@function clamp-number( $value, $min, $max ) {
-	@return math.min( math.max( $value, $min ), $max );
+@function clamp-number($value, $min, $max) {
+	@return math.min(math.max($value, $min), $max);
 }
-
 
 
 //
@@ -92,11 +88,11 @@ $line-height-base: 1.5 !default;
 // Pixel to em
 //
 
-@function em( $value, $base: $font-size-base ) {
-	$value: px( $value );
-	$base: px( $base );
+@function em($value, $base: $font-size-base) {
+	$value: px($value);
+	$base: px($base);
 
-	@return math.div( $value, $base ) * 1em;
+	@return math.div($value, $base) * 1em;
 }
 
 
@@ -104,11 +100,11 @@ $line-height-base: 1.5 !default;
 // Pixel to rem
 //
 
-@function rem( $value, $base: $font-size-base ) {
-	$value: px( $value );
-	$base: px( $base );
+@function rem($value, $base: $font-size-base) {
+	$value: px($value);
+	$base: px($base);
 
-	@return math.div( $value, $base ) * 1rem;
+	@return math.div($value, $base) * 1rem;
 }
 
 
@@ -116,21 +112,21 @@ $line-height-base: 1.5 !default;
 // Back to px
 //
 
-@function px( $value, $base: $font-size-base ) {
-	$unit: math.unit( $value );
-	$value: strip-unit( $value );
+@function px($value, $base: $font-size-base) {
+	$unit: math.unit($value);
+	$value: strip-unit($value);
 
-	@if ( ( $unit == '' ) or ( $unit == 'px' ) ) {
+	@if (($unit == '') or ($unit == 'px')) {
 		$base: 1;
 	}
 
-	$unit: math.unit( $base );
+	$unit: math.unit($base);
 
-	@if ( ( $unit == 'em' ) or ( $unit == 'rem' ) ) {
+	@if (($unit == 'em') or ($unit == 'rem')) {
 		$base: 16 * $base;
 	}
 
-	@return $value * strip-unit( $base ) * 1px;
+	@return $value * strip-unit($base) * 1px;
 }
 
 
@@ -138,18 +134,17 @@ $line-height-base: 1.5 !default;
 // Map to List
 //
 
-@function map-to-list( $value ) {
+@function map-to-list($value) {
 	$keys: ();
 	$values: ();
 
 	@each $key, $val in $value {
-		$keys: list.append( $keys, $key );
-		$values: list.append( $values, $val );
+		$keys: list.append($keys, $key);
+		$values: list.append($values, $val);
 	}
 
-	@return list.zip( $keys, $values );
+	@return list.zip($keys, $values);
 }
-
 
 
 //
@@ -157,23 +152,23 @@ $line-height-base: 1.5 !default;
 //
 // **************************************************
 
-$spacer: rem( $font-size-base * $line-height-base ) !default;
+$spacer: rem($font-size-base * $line-height-base) !default;
 
 
 //
 // Spacer
 //
 
-@function spacer( $amount: 1, $unit: null ) {
+@function spacer($amount: 1, $unit: null) {
 	$value: $spacer;
-	$amount: strip-unit( $amount );
+	$amount: strip-unit($amount);
 
 	@if $unit == 'px' {
-		$value: px( $spacer );
+		$value: px($spacer);
 	} @else if $unit == 'em' {
-		$value: em( $spacer );
+		$value: em($spacer);
 	} @else if $unit == 'rem' {
-		$value: rem( $spacer );
+		$value: rem($spacer);
 	}
 
 	@return $value * $amount;
@@ -184,21 +179,20 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 // Calculate the baseline grid
 //
 
-@function base-line( $size: $font-size-base ) {
-	$base-value: px( $size );
-	$font-value: px( $font-size-base );
-	$line-value: px( $line-height-base );
+@function base-line($size: $font-size-base) {
+	$base-value: px($size);
+	$font-value: px($font-size-base);
+	$line-value: px($line-height-base);
 	$font-line: $font-value * $line-value;
 
-	$span: math.ceil( math.div( $base-value, $font-line ) );
+	$span: math.ceil(math.div($base-value, $font-line));
 
-	@if ( ( ( $span * $font-line ) - $base-value ) < 2 ) {
+	@if ((($span * $font-line) - $base-value) < 2) {
 		$span: $span + 1;
 	}
 
-	@return math.div( $span * $font-line, $base-value );
+	@return math.div($span * $font-line, $base-value);
 }
-
 
 
 //
@@ -211,8 +205,8 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 // Prepend a value
 //
 
-@function prepend( $list, $value ) {
-	@return list.join( $value, $list );
+@function prepend($list, $value) {
+	@return list.join($value, $list);
 }
 
 
@@ -220,15 +214,15 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 // Insert a value at index n
 //
 
-@function insert-nth( $list, $index, $value ) {
+@function insert-nth($list, $index, $value) {
 	$result: ();
 
-	@for $i from 1 through list.length( $list ) {
+	@for $i from 1 through list.length($list) {
 		@if $i == $index {
-			$result: list.append( $result, $value );
+			$result: list.append($result, $value);
 		}
 
-		$result: list.append( $result, list.nth( $list, $i ) );
+		$result: list.append($result, list.nth($list, $i));
 	}
 
 	@return $result;
@@ -239,18 +233,17 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 // Remove the nth item
 //
 
-@function unset-nth( $list, $index ) {
+@function unset-nth($list, $index) {
 	$result: ();
 
-	@for $i from 1 through list.length( $list ) {
+	@for $i from 1 through list.length($list) {
 		@if $i != $index {
-			$result: list.append( $result, list.nth( $list, $i ) );
+			$result: list.append($result, list.nth($list, $i));
 		}
 	}
 
 	@return $result;
 }
-
 
 
 //
@@ -263,8 +256,8 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 // Mix amount of black
 //
 
-@function shade( $color, $percent: 50% ) {
-	@return color.mix( #000, $color, $percent );
+@function shade($color, $percent: 50%) {
+	@return color.mix(#000, $color, $percent);
 }
 
 
@@ -272,6 +265,6 @@ $spacer: rem( $font-size-base * $line-height-base ) !default;
 // Mix amount of white
 //
 
-@function tint( $color, $percent: 50% ) {
-	@return color.mix( #fff, $color, $percent );
+@function tint($color, $percent: 50%) {
+	@return color.mix(#fff, $color, $percent);
 }

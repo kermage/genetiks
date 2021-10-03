@@ -15,7 +15,6 @@
 // ==================================================
 
 
-
 //
 // Breakpoints
 //
@@ -37,7 +36,6 @@ $breakpoints: (
 	xlarge:  $screen-xlarge,
 	xxlarge: $screen-xxlarge
 );
-
 
 
 //
@@ -75,7 +73,6 @@ $lime:   #01ff70;
 $maroon: #85144b;
 
 
-
 //
 // Styles
 //
@@ -108,26 +105,25 @@ $line-height-base: 1.5;
 $headings-font-family: inherit;
 $headings-color:       inherit;
 
-$h1-font-size: em( $font-size-base * 2.875 );
-$h2-font-size: em( $font-size-base * 2.25 );
-$h3-font-size: em( $font-size-base * 1.75 );
-$h4-font-size: em( $font-size-base * 1.375 );
-$h5-font-size: em( $font-size-base * 1.125 );
-$h6-font-size: em( $font-size-base );
+$h1-font-size: em($font-size-base * 2.875);
+$h2-font-size: em($font-size-base * 2.25);
+$h3-font-size: em($font-size-base * 1.75);
+$h4-font-size: em($font-size-base * 1.375);
+$h5-font-size: em($font-size-base * 1.125);
+$h6-font-size: em($font-size-base);
 
 
 //
 // Base
 //
 
-$body-background: mui-color( grey, 100 );
-$body-color:      mui-color( grey, 800 );
-$spacer:          rem( $font-size-base * $line-height-base );
+$body-background: mui-color(grey, 100);
+$body-color:      mui-color(grey, 800);
+$spacer:          rem($font-size-base * $line-height-base);
 $border-radius:   0.25em;
 
-$link-color:       mui-color( red, 700 );
-$link-hover-color: shade( $link-color, 15 );
-
+$link-color:       mui-color(red, 700);
+$link-hover-color: shade($link-color, 15);
 
 
 //

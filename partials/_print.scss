@@ -17,12 +17,12 @@
 
 	// Display the URL of a link after the text
 	a[href]::after {
-		content: ' (' attr( href ) ') ';
+		content: ' (' attr(href) ') ';
 	}
 
 	// Display what an abbreviation stands for after the text
 	abbr[title]::after {
-		content: ' (' attr( title ) ') ';
+		content: ' (' attr(title) ') ';
 	}
 
 	// Don't display the URL for images or JavaScript/internal links

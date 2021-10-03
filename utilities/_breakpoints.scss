@@ -23,11 +23,11 @@ $breakpoints: (
 // From
 //
 
-@mixin break-from( $query ) {
-	$value: break-from( $query );
+@mixin break-from($query) {
+	$value: break-from($query);
 
 	@if $value != null {
-		@media screen and ( min-width: $value ) { @content; }
+		@media screen and (min-width: $value) { @content; }
 	} @else {
 		@content;
 	}
@@ -38,11 +38,11 @@ $breakpoints: (
 // Until
 //
 
-@mixin break-until( $query ) {
-	$value: break-until( $query );
+@mixin break-until($query) {
+	$value: break-until($query);
 
 	@if $value != -1 {
-		@media screen and ( max-width: $value ) { @content; }
+		@media screen and (max-width: $value) { @content; }
 	} @else {
 		@content;
 	}
@@ -53,15 +53,15 @@ $breakpoints: (
 // Only
 //
 
-@mixin break-only( $query ) {
-	$value: break-only( $query );
+@mixin break-only($query) {
+	$value: break-only($query);
 
-	@if list.nth( $value, 1 ) != null and list.nth( $value, 2 ) != null {
-		@media screen and ( min-width: list.nth( $value, 1 ) ) and ( max-width: list.nth( $value, 2 ) ) { @content; }
-	} @else if list.nth( $value, 1 ) == null {
-		@media screen and ( max-width: $value ) { @content; }
-	} @else if list.nth( $value, 2 ) == null {
-		@media screen and ( min-width: $value ) { @content; }
+	@if list.nth($value, 1) != null and list.nth($value, 2) != null {
+		@media screen and (min-width: list.nth($value, 1)) and (max-width: list.nth($value, 2)) { @content; }
+	} @else if list.nth($value, 1) == null {
+		@media screen and (max-width: $value) { @content; }
+	} @else if list.nth($value, 2) == null {
+		@media screen and (min-width: $value) { @content; }
 	}
 }
 
@@ -70,22 +70,22 @@ $breakpoints: (
 // Break Mixin
 //
 
-@mixin break( $value ) {
-	$key: list.nth( $value, 1 );
-	$query: if( list.length( $value ) > 2, unset-nth( $value, 1 ), list.nth( $value, 2 ) );
-	$accepted: ( 'from', 'until', 'only' );
+@mixin break($value) {
+	$key: list.nth($value, 1);
+	$query: if(list.length($value) > 2, unset-nth($value, 1), list.nth($value, 2));
+	$accepted: ('from', 'until', 'only');
 
-	@if list.index( $accepted, $key ) {
+	@if list.index($accepted, $key) {
 		@if $key == 'from' {
-			@include break-from( $query ) {
+			@include break-from($query) {
 				@content;
 			}
 		} @else if $key == 'until' {
-			@include break-until( $query ) {
+			@include break-until($query) {
 				@content;
 			}
 		} @else if $key == 'only' {
-			@include break-only( $query ) {
+			@include break-only($query) {
 				@content;
 			}
 		}
@@ -97,14 +97,14 @@ $breakpoints: (
 // Return minimum breakpoint width
 //
 
-@function break-from( $query ) {
+@function break-from($query) {
 	$value: $query;
 
-	@if map.has-key( $breakpoints, $query ) {
-		$value: map.get( $breakpoints, $query );
+	@if map.has-key($breakpoints, $query) {
+		$value: map.get($breakpoints, $query);
 	}
 
-	@return if( $value != 0, $value, null );
+	@return if($value != 0, $value, null);
 }
 
 
@@ -112,17 +112,17 @@ $breakpoints: (
 // Return maximum breakpoint width
 //
 
-@function break-until( $query ) {
+@function break-until($query) {
 	$value: $query;
 
-	@if map.has-key( $breakpoints, $query ) {
-		$value: map.get( $breakpoints, $query );
-		$unit: math.unit( $value );
+	@if map.has-key($breakpoints, $query) {
+		$value: map.get($breakpoints, $query);
+		$unit: math.unit($value);
 
 		@if $unit == 'em' {
-			$value: em( px( $value ) - 1 );
+			$value: em(px($value) - 1);
 		} @else if $unit == 'rem' {
-			$value: rem( px( $value ) - 1 );
+			$value: rem(px($value) - 1);
 		} @else {
 			$value: $value - 1;
 		}
@@ -136,25 +136,25 @@ $breakpoints: (
 // Return minimum and maximum breakpoint width
 //
 
-@function break-only( $query ) {
+@function break-only($query) {
 	$value: $query;
-	$names: map.keys( $breakpoints );
-	$index: list.index( $names, $query );
+	$names: map.keys($breakpoints);
+	$index: list.index($names, $query);
 
-	@if map.has-key( $breakpoints, $query ) {
-		$value: list.set-nth( $value, 1, $query );
-		$query: if( $index < list.length( $names ), list.nth( $names, $index + 1 ), null );
-		$value: list.append( $value, $query );
-	} @else if meta.type-of( $query ) == 'number' {
+	@if map.has-key($breakpoints, $query) {
+		$value: list.set-nth($value, 1, $query);
+		$query: if($index < list.length($names), list.nth($names, $index + 1), null);
+		$value: list.append($value, $query);
+	} @else if meta.type-of($query) == 'number' {
 		$value: $query $query;
 	}
 
-	@if map.has-key( $breakpoints, list.nth( $value, 1 ) ) {
-		$value: list.set-nth( $value, 1, break-from( list.nth( $value, 1 ) ) );
+	@if map.has-key($breakpoints, list.nth($value, 1)) {
+		$value: list.set-nth($value, 1, break-from(list.nth($value, 1)));
 	}
 
-	@if map.has-key( $breakpoints, list.nth( $value, 2 ) ) {
-		$value: list.set-nth( $value, 2, break-until( list.nth( $value, 2 ) ) );
+	@if map.has-key($breakpoints, list.nth($value, 2)) {
+		$value: list.set-nth($value, 2, break-until(list.nth($value, 2)));
 	}
 
 	@return $value;

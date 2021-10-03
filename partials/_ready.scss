@@ -8,7 +8,7 @@
 	@each $name, $size in $breakpoints {
 		@if (0 != $size) {
 			@include break-from($name) {
-				max-width: rem( $size ) - $spacer;
+				max-width: rem($size) - $spacer;
 			}
 		}
 	}

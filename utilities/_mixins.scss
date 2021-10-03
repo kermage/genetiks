@@ -39,20 +39,18 @@
 }
 
 
-
 //
 // Container
 //
 // **************************************************
 
-@mixin container( $width: 100%, $spacer: spacer( 0.5 ) ) {
+@mixin container($width: 100%, $spacer: spacer(0.5)) {
 	width: $width;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: $spacer;
 	padding-right: $spacer;
 }
-
 
 
 //
@@ -66,8 +64,8 @@
 //
 
 @mixin visually-hidden {
-	clip: rect( 0, 0, 0, 0 );
-	clip-path: inset( 50% );
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
 	height: 1px;
 	overflow: hidden;
 	position: absolute;
@@ -111,28 +109,26 @@
 }
 
 
-
 //
 // Centering
 //
 // **************************************************
 
-@mixin center( $position: null ) {
+@mixin center($position: null) {
 	position: absolute;
 
-	@if ( $position == null ) {
+	@if ($position == null) {
 		top: 50%;
 		left: 50%;
-		transform: translate( -50%, -50% );
-	} @else if ( string.to-upper-case( $position ) == 'X' ) {
+		transform: translate(-50%, -50%);
+	} @else if (string.to-upper-case($position) == 'X') {
 		left: 50%;
-		transform: translateX( -50% );
-	} @else if ( string.to-upper-case( $position ) == 'Y' ) {
+		transform: translateX(-50%);
+	} @else if (string.to-upper-case($position) == 'Y') {
 		top: 50%;
-		transform: translateY( -50% );
+		transform: translateY(-50%);
 	}
 }
-
 
 
 //
@@ -145,9 +141,9 @@
 // FontAwesome
 //
 
-@mixin fa( $icon: null ) {
-	@if ( $icon != null ) {
-		content: unicode( $icon );
+@mixin fa($icon: null) {
+	@if ($icon != null) {
+		content: unicode($icon);
 	}
 
 	// stylelint-disable-next-line font-family-no-missing-generic-family-keyword
@@ -158,9 +154,9 @@
 	text-rendering: auto;
 }
 
-@mixin fa5( $type: 'Solid', $icon: null ) {
-	@if ( $icon != null ) {
-		content: unicode( $icon );
+@mixin fa5($type: 'Solid', $icon: null) {
+	@if ($icon != null) {
+		content: unicode($icon);
 	}
 
 	// stylelint-disable-next-line font-family-no-missing-generic-family-keyword
@@ -184,11 +180,10 @@
 // Vertical Rhythm
 //
 
-@mixin vertical-rhythm( $size ) {
+@mixin vertical-rhythm($size) {
 	font-size: $size;
-	line-height: base-line( $size );
+	line-height: base-line($size);
 }
-
 
 
 //
@@ -196,12 +191,12 @@
 //
 // **************************************************
 
-@mixin selector( $element ) {
+@mixin selector($element) {
 	$selections: ();
 
-	@if ( string.to-lower-case( $element ) == 'placeholder' ) {
+	@if (string.to-lower-case($element) == 'placeholder') {
 		$selections: ':-webkit-input-placeholder' ':-moz-placeholder' '-moz-placeholder' '-ms-input-placeholder';
-	} @else if ( string.to-lower-case( $element ) == 'selection' ) {
+	} @else if (string.to-lower-case($element) == 'selection') {
 		$selections: ':selection' ':-moz-selection';
 	}
 
@@ -214,13 +209,12 @@
 }
 
 
-
 //
 // Triangle
 //
 // **************************************************
 
-@mixin triangle( $size, $color, $direction ) {
+@mixin triangle($size, $color, $direction) {
 	content: '';
 	display: block;
 	width: 0;
@@ -229,13 +223,13 @@
 	border-style: solid;
 	border-color: transparent;
 
-	@if ( string.to-lower-case( $direction ) == 'up' ) {
+	@if (string.to-lower-case($direction) == 'up') {
 		border-bottom-color: $color;
-	} @else if ( string.to-lower-case( $direction ) == 'down' ) {
+	} @else if (string.to-lower-case($direction) == 'down') {
 		border-top-color: $color;
-	} @else if ( string.to-lower-case( $direction ) == 'left' ) {
+	} @else if (string.to-lower-case($direction) == 'left') {
 		border-right-color: $color;
-	} @else if ( string.to-lower-case( $direction ) == 'right' ) {
+	} @else if (string.to-lower-case($direction) == 'right') {
 		border-left-color: $color;
 	}
 }

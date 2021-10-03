@@ -15,27 +15,27 @@ h6 {
 }
 
 h1 {
-	@include vertical-rhythm( $h1-font-size );
+	@include vertical-rhythm($h1-font-size);
 }
 
 h2 {
-	@include vertical-rhythm( $h2-font-size );
+	@include vertical-rhythm($h2-font-size);
 }
 
 h3 {
-	@include vertical-rhythm( $h3-font-size );
+	@include vertical-rhythm($h3-font-size);
 }
 
 h4 {
-	@include vertical-rhythm( $h4-font-size );
+	@include vertical-rhythm($h4-font-size);
 }
 
 h5 {
-	@include vertical-rhythm( $h5-font-size );
+	@include vertical-rhythm($h5-font-size);
 }
 
 h6 {
-	@include vertical-rhythm( $h6-font-size );
+	@include vertical-rhythm($h6-font-size);
 }
 
 p {
@@ -70,7 +70,7 @@ blockquote {
 	border: solid $link-color;
 	border-width: 0 1px 0 5px;
 	border-radius: $border-radius;
-	box-shadow: 0 1px 5px 0 rgba( 0, 0, 0, 0.125 );
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.125);
 	margin: 0 0 $spacer;
 	padding: 1em 1em 1em 2.5em;
 	text-align: justify;
@@ -80,7 +80,7 @@ blockquote {
 		position: absolute;
 		margin-top: -0.25em;
 		left: 0.15em;
-		color: mui-color( grey, 700 );
+		color: mui-color(grey, 700);
 		font-family: Georgia, serif;
 		font-size: 3em;
 		font-weight: 600;
