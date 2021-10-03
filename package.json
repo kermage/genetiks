@@ -32,6 +32,8 @@
     "postcss-cli": "^9.0.1"
   },
   "scripts": {
+		"lint": "stylelint **/*.scss --formatter=verbose",
+		"fix": "stylelint **/*.scss --fix",
     "sass": "sass style.scss css/style.css",
     "postcss": "postcss css/style.css --replace",
     "test": "npm run sass && npm run postcss"

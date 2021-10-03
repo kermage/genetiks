@@ -1,3 +1,6 @@
 {
-  "extends": "./config"
+  "extends": "./config",
+	"ignoreFiles": [
+		"css/**"
+	]
 }
