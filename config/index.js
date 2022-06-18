@@ -39,17 +39,17 @@ module.exports = {
 		],
 		'indentation': 'tab',
 		'max-empty-lines': 2,
-		"no-invalid-position-at-import-rule": null,
-		"scss/at-rule-no-unknown": [
+		'no-invalid-position-at-import-rule': null,
+		'scss/at-rule-no-unknown': [
 			true,
 			{
-				"ignoreAtRules": [
-					"tailwind",
-					"apply",
-					"layer",
-					"variants",
-					"responsive",
-					"screen"
+				'ignoreAtRules': [
+					'tailwind',
+					'apply',
+					'layer',
+					'variants',
+					'responsive',
+					'screen'
 				]
 			}
 		],
