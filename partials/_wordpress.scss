@@ -4,11 +4,11 @@
 
 // Accessibility
 .screen-reader-text {
-	@include visually-hidden();
+	@include visually-hidden;
 
 	&:active,
 	&:focus {
-		@include visible();
+		@include visible;
 	}
 }
 
@@ -51,7 +51,7 @@
 }
 
 .gallery {
-	@include flex-container();
+	@include flex-container;
 
 	margin-bottom: $spacer;
 }

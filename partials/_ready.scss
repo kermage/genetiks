@@ -3,10 +3,10 @@
 // ==========================================================================
 
 .container {
-	@include container();
+	@include container;
 
 	@each $name, $size in $breakpoints {
-		@if (0 != $size) {
+		@if 0 != $size {
 			@include break-from($name) {
 				max-width: rem($size) - $spacer;
 			}
@@ -15,9 +15,9 @@
 }
 
 .grid {
-	@include flex-container();
+	@include flex-container;
 }
 
 .cell {
-	@include flex-item();
+	@include flex-item;
 }

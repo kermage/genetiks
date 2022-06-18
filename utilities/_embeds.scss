@@ -1,14 +1,9 @@
-//
 // Embeds
-//
 // **************************************************
 
-@use "sass:math";
+@use 'sass:math';
 
-//
 // Wrapper
-//
-
 
 @mixin embed-wrapper($width, $height) {
 	position: relative;
@@ -21,9 +16,7 @@
 }
 
 
-//
 // Item
-//
 
 @mixin embed-item {
 	position: absolute;

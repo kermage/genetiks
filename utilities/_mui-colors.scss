@@ -1,15 +1,11 @@
-//
 // Material UI Colors
-//
 // **************************************************
 
-@use "sass:map";
-@use "sass:string";
+@use 'sass:map';
+@use 'sass:string';
 
 
-//
 // Retrieve material ui color value from map
-//
 
 @function mui-color($name, $variant: '500') {
 	$name: string.quote(#{$name});

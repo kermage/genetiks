@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	'extends': 'stylelint-config-standard',
+	'extends': 'stylelint-config-standard-scss',
 	'plugins': 'stylelint-scss',
 	'rules': {
 		'at-rule-empty-line-before': [
@@ -53,6 +53,8 @@ module.exports = {
 				]
 			}
 		],
+		'scss/dollar-variable-colon-space-after': 'at-least-one-space',
+		'string-quotes': 'single',
 		'value-list-max-empty-lines': 1
 	}
 };

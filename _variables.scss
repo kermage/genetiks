@@ -15,9 +15,7 @@
 // ==================================================
 
 
-//
 // Breakpoints
-//
 // **************************************************
 
 $screen-xsmall:  420px;
@@ -26,7 +24,6 @@ $screen-medium:  768px;
 $screen-large:   992px;
 $screen-xlarge:  1200px;
 $screen-xxlarge: 1440px;
-
 $breakpoints: (
 	xxsmall: 0,
 	xsmall:  $screen-xsmall,
@@ -38,15 +35,11 @@ $breakpoints: (
 );
 
 
-//
 // Colors
-//
 // **************************************************
 
 
-//
 // Grayscale
-//
 
 $black:        #000;
 $gray-darker:  #333;
@@ -55,9 +48,7 @@ $gray-lighter: #999;
 $white:        #fff;
 
 
-//
 // General
-//
 
 $red:    #ff4136;
 $green:  #2ecc40;
@@ -73,9 +64,7 @@ $lime:   #01ff70;
 $maroon: #85144b;
 
 
-//
 // Styles
-//
 // **************************************************
 
 $font-weight-thin:       100;
@@ -89,22 +78,17 @@ $font-weight-extrabold:  800;
 $font-weight-black:      900;
 
 
-//
 // Typography
-//
 
 $font-family-base: 'Open Sans', sans-serif;
 $font-size-base:   16px;
 $line-height-base: 1.5;
 
 
-//
 // Headings
-//
 
 $headings-font-family: inherit;
 $headings-color:       inherit;
-
 $h1-font-size: em($font-size-base * 2.875);
 $h2-font-size: em($font-size-base * 2.25);
 $h3-font-size: em($font-size-base * 1.75);
@@ -113,28 +97,21 @@ $h5-font-size: em($font-size-base * 1.125);
 $h6-font-size: em($font-size-base);
 
 
-//
 // Base
-//
 
 $body-background: mui-color(grey, 100);
 $body-color:      mui-color(grey, 800);
 $spacer:          rem($font-size-base * $line-height-base);
 $border-radius:   0.25em;
-
 $link-color:       mui-color(red, 700);
 $link-hover-color: shade($link-color, 15);
 
 
-//
 // Lists
-//
 // **************************************************
 
 
-//
 // Buttons
-//
 
 $button-list: (
 	'button',
@@ -144,9 +121,7 @@ $button-list: (
 );
 
 
-//
 // Inputs
-//
 
 $input-list: (
 	'input[type="color"]',

@@ -1,63 +1,57 @@
-//
 // Flex Box
-//
 // **************************************************
 
 
-//
 // Container
-//
 
 @mixin flex-container($direction: row, $wrap: wrap, $justify: flex-start, $align: stretch, $content: stretch) {
 	display: flex;
 
-	@if ($direction != 'row') {
+	@if $direction != 'row' {
 		flex-direction: $direction;
 	}
 
-	@if ($wrap != 'nowrap') {
+	@if $wrap != 'nowrap' {
 		flex-wrap: $wrap;
 	}
 
-	@if ($justify != 'flex-start') {
+	@if $justify != 'flex-start' {
 		justify-content: $justify;
 	}
 
-	@if ($align != 'stretch') {
+	@if $align != 'stretch' {
 		align-items: $align;
 	}
 
-	@if ($content != 'stretch') {
+	@if $content != 'stretch' {
 		align-content: $content;
 	}
 }
 
 
-//
 // Item
-//
 
 @mixin flex-item($grow: 1, $shrink: 1, $basis: 0, $align: auto) {
-	@if ($basis != 0 and $basis != auto) {
+	@if $basis != 0 and $basis != auto {
 		$grow: 0;
 		$shrink: 0;
 
 		flex-grow: 0;
 	}
 
-	@if ($grow != 0) {
+	@if $grow != 0 {
 		flex-grow: $grow;
 	}
 
-	@if ($shrink != 1) {
+	@if $shrink != 1 {
 		flex-shrink: $shrink;
 	}
 
-	@if ($basis != 'auto') {
+	@if $basis != 'auto' {
 		flex-basis: $basis;
 	}
 
-	@if ($align != 'auto') {
+	@if $align != 'auto' {
 		align-self: $align;
 	}
 }

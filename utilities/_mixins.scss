@@ -22,12 +22,10 @@
 //  * Triangle
 // ==================================================
 
-@use "sass:string";
+@use 'sass:string';
 
 
-//
 // Clearfix
-//
 // **************************************************
 
 @mixin clearfix {
@@ -39,9 +37,7 @@
 }
 
 
-//
 // Container
-//
 // **************************************************
 
 @mixin container($width: 100%, $spacer: spacer(0.5)) {
@@ -53,15 +49,11 @@
 }
 
 
-//
 // Visibility
-//
 // **************************************************
 
 
-//
 // Visually hidden but still accessible to keyboards and assistive devices
-//
 
 @mixin visually-hidden {
 	clip: rect(0, 0, 0, 0);
@@ -74,9 +66,7 @@
 }
 
 
-//
 // Reverses 'invisible' to allow the element to be focusable when navigated
-//
 
 @mixin visible {
 	clip: auto;
@@ -89,9 +79,7 @@
 }
 
 
-//
 // Hide text only, not the whole element
-//
 
 @mixin text-hidden {
 	overflow: hidden;
@@ -109,45 +97,39 @@
 }
 
 
-//
 // Centering
-//
 // **************************************************
 
 @mixin center($position: null) {
 	position: absolute;
 
-	@if ($position == null) {
+	@if not $position {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-	} @else if (string.to-upper-case($position) == 'X') {
+	} @else if string.to-upper-case($position) == 'X' {
 		left: 50%;
 		transform: translateX(-50%);
-	} @else if (string.to-upper-case($position) == 'Y') {
+	} @else if string.to-upper-case($position) == 'Y' {
 		top: 50%;
 		transform: translateY(-50%);
 	}
 }
 
 
-//
 // Type
-//
 // **************************************************
 
 
-//
 // FontAwesome
-//
 
 @mixin fa($icon: null) {
-	@if ($icon != null) {
+	@if $icon {
 		content: unicode($icon);
 	}
 
 	// stylelint-disable-next-line font-family-no-missing-generic-family-keyword
-	font-family: 'FontAwesome';
+	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
@@ -155,7 +137,7 @@
 }
 
 @mixin fa5($type: 'Solid', $icon: null) {
-	@if ($icon != null) {
+	@if $icon {
 		content: unicode($icon);
 	}
 
@@ -165,9 +147,7 @@
 }
 
 
-//
 // Truncate
-//
 
 @mixin truncate {
 	overflow: hidden;
@@ -176,9 +156,7 @@
 }
 
 
-//
 // Vertical Rhythm
-//
 
 @mixin vertical-rhythm($size) {
 	font-size: $size;
@@ -186,17 +164,15 @@
 }
 
 
-//
 // Selector
-//
 // **************************************************
 
 @mixin selector($element) {
 	$selections: ();
 
-	@if (string.to-lower-case($element) == 'placeholder') {
+	@if string.to-lower-case($element) == 'placeholder' {
 		$selections: ':-webkit-input-placeholder' ':-moz-placeholder' '-moz-placeholder' '-ms-input-placeholder';
-	} @else if (string.to-lower-case($element) == 'selection') {
+	} @else if string.to-lower-case($element) == 'selection' {
 		$selections: ':selection' ':-moz-selection';
 	}
 
@@ -209,9 +185,7 @@
 }
 
 
-//
 // Triangle
-//
 // **************************************************
 
 @mixin triangle($size, $color, $direction) {
@@ -223,13 +197,13 @@
 	border-style: solid;
 	border-color: transparent;
 
-	@if (string.to-lower-case($direction) == 'up') {
+	@if string.to-lower-case($direction) == 'up' {
 		border-bottom-color: $color;
-	} @else if (string.to-lower-case($direction) == 'down') {
+	} @else if string.to-lower-case($direction) == 'down' {
 		border-top-color: $color;
-	} @else if (string.to-lower-case($direction) == 'left') {
+	} @else if string.to-lower-case($direction) == 'left' {
 		border-right-color: $color;
-	} @else if (string.to-lower-case($direction) == 'right') {
+	} @else if string.to-lower-case($direction) == 'right' {
 		border-left-color: $color;
 	}
 }
