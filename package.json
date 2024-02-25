@@ -14,17 +14,18 @@
   },
   "files": [
     "config/",
+    "dist/",
     "utilities/",
     "_utilities.scss"
   ],
-  "main": "index.cjs",
-  "module": "index.mjs",
-  "types": "index.d.ts",
+  "main": "dist/scripts/index.cjs",
+  "module": "dist/scripts/index.mjs",
+  "types": "dist/scripts/index.d.ts",
   "style": "_utilities.scss",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.cjs"
+      "import": "./dist/scripts/index.mjs",
+      "require": "./dist/scripts/index.cjs"
     }
   },
   "repository": {
@@ -42,13 +43,14 @@
     "unbuild": "^2.0.0"
   },
   "scripts": {
-		"build": "unbuild",
-		"prepublishOnly": "npm run build",
+    "build:scripts": "unbuild",
     "lint": "stylelint **/*.scss --formatter=verbose",
     "fix": "stylelint **/*.scss --fix",
-    "sass": "sass style.scss css/style.css",
-    "postcss": "postcss css/style.css --replace",
-    "test": "npm run sass && npm run postcss"
+    "sass": "sass styles/style.scss dist/styles/index.css",
+    "postcss": "postcss dist/styles/index.css --replace",
+    "build:styles": "npm run sass && npm run postcss",
+    "build": "npm run build:scripts && npm run build:styles",
+    "prepublishOnly": "npm run build"
   },
   "browserslist": [
     "IE 10"
