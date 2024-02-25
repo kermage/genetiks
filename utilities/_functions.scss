@@ -220,12 +220,12 @@ $spacer: rem($font-size-base * $line-height-base) !default;
 // Mix amount of black
 
 @function shade($color, $percent: 50%) {
-	@return color.mix(#000, $color, $percent);
+	@return color.mix(#000, $color, strip-unit($percent) * 1%);
 }
 
 
 // Mix amount of white
 
 @function tint($color, $percent: 50%) {
-	@return color.mix(#fff, $color, $percent);
+	@return color.mix(#fff, $color, strip-unit($percent) * 1%);
 }
