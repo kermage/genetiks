@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../dist/styles/index.css">
+</head>
+<body>
+	<h1>Hello World!</h1>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto asperiores aut beatae cum
+		debitis deserunt ducimus earum eveniet fugiat, ipsum libero neque quae sunt tempora ullam vel vitae.
+	</p>
+
+	<p>Accusantium alias amet aperiam eaque earum enim, facere incidunt labore maxime nisi officia optio possimus
+		quasi quis quod repellat sapiente sequi tenetur voluptate voluptatibus! Eveniet excepturi exercitationem nam
+		possimus rerum.
+	</p>
+
+	<script type="module">
+		import { one, many } from '../dist/scripts/index.mjs';
+
+		let $one = one( 'h1' );
+		let $many = many( 'p' );
+
+		$one.classList.add( 'test' );
+		$many.forEach( function( element, index ) {
+			element.classList.add( 'test-' + index );
+		} );
+
+		console.log( 'one', $one );
+		console.log( 'many', $many );
+	</script>
+</body>
+</html>
