@@ -1,8 +1,11 @@
 /.history/
 /.vscode/
+/.idea/
 /css/
 /dist/
 /node_modules/
 /package-lock.json
 /pnpm-lock.yaml
 /*.sublime-*
+.DS_Store
+genetiks-*.tgz

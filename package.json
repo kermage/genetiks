@@ -14,20 +14,12 @@
   },
   "files": [
     "config/",
-    "dist/",
-    "utilities/",
-    "_utilities.scss"
+    "dist/"
   ],
   "main": "dist/scripts/index.cjs",
   "module": "dist/scripts/index.mjs",
   "types": "dist/scripts/index.d.ts",
-  "style": "_utilities.scss",
-  "exports": {
-    ".": {
-      "import": "./dist/scripts/index.mjs",
-      "require": "./dist/scripts/index.cjs"
-    }
-  },
+  "style": "dist/styles/utilities/index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/kermage/genetiks.git"
@@ -46,11 +38,12 @@
     "build:scripts": "unbuild",
     "lint": "stylelint **/*.scss --formatter=verbose",
     "fix": "stylelint **/*.scss --fix",
-    "sass": "sass styles/style.scss dist/styles/index.css",
+    "sass": "sass styles/index.scss dist/styles/index.css",
     "postcss": "postcss dist/styles/index.css --replace",
     "build:styles": "npm run sass && npm run postcss",
     "build": "npm run build:scripts && npm run build:styles",
-    "prepublishOnly": "npm run build"
+    "utilities": "cp -r styles/utilities dist/styles",
+    "prepublishOnly": "npm run build && npm run utilities"
   },
   "browserslist": [
     "IE 10"
