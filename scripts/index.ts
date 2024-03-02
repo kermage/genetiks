@@ -1,4 +1,4 @@
-export const one = ( selector: string, $context: ParentNode = document ): Element | null => {
+export const one = ( selector: string, $context: ParentNode = document ) => {
 	if ( ! selector ) {
 		return null;
 	}
@@ -8,7 +8,7 @@ export const one = ( selector: string, $context: ParentNode = document ): Elemen
 	return element ? extend( element ) : null;
 };
 
-export const many = ( selector: string, $context: ParentNode = document ): Element[] | null => {
+export const many = ( selector: string, $context: ParentNode = document ) => {
 	if ( ! selector ) {
 		return null;
 	}
@@ -18,7 +18,7 @@ export const many = ( selector: string, $context: ParentNode = document ): Eleme
 	return elements ? Array.from( elements ).map( element => extend( element ) ) : null;
 };
 
-export const extend = ( element: Element ): Element => {
+export const extend = ( element: Element ) => {
 	return Object.assign( element, {
 		on: ( ...args: Parameters<typeof element.addEventListener> ) => {
 			args[ 0 ].split( ' ' ).forEach( ( eventName ) => {
