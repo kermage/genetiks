@@ -34,5 +34,13 @@ export const extend = ( element: Element ) => {
 				element.removeEventListener.apply( element, args );
 			} );
 		},
+		attr: ( properties: Record<string, string> ) => {
+			Object.entries( properties ).forEach( value => {
+				element.setAttribute( ...value );
+			} );
+		},
+		css: ( properties: Record<string, string> ) => {
+			Object.assign( ( element as HTMLElement ).style, properties );
+		}
 	} );
 };
