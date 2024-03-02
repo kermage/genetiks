@@ -27,6 +27,19 @@
 		$one.classList.add( 'test' );
 		$many.forEach( function( element, index ) {
 			element.classList.add( 'test-' + index );
+			element.on( 'click mouseover', function(event) {
+				alert( `${ event.type }\n${ this.innerHTML }` );
+			}, { once: true } );
+			element.attr({
+				'data-test': 'tester',
+				'data-another': 'one',
+			});
+			element.css({
+				'color': 'darkgrey',
+				'background-color': '#fefefe',
+				'marginBottom': '1.5rem',
+				'padding': '20px',
+			});
 		} );
 
 		console.log( 'one', $one );
