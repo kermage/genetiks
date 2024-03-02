@@ -1,17 +1,17 @@
-export const one = ( selector: string ): Element | null => {
+export const one = ( selector: string, $context: ParentNode = document ): Element | null => {
 	if ( ! selector ) {
 		return null;
 	}
 
-	return document.querySelector( selector );
+	return $context.querySelector( selector );
 };
 
-export const many = ( selector: string ): Element[] | null => {
+export const many = ( selector: string, $context: ParentNode = document ): Element[] | null => {
 	if ( ! selector ) {
 		return null;
 	}
 
-	const elements = document.querySelectorAll( selector );
+	const elements = $context.querySelectorAll( selector );
 
 	return elements ? Array.from( elements ) : null;
 };
