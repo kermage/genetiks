@@ -3,7 +3,9 @@ export const one = ( selector: string, $context: ParentNode = document ): Elemen
 		return null;
 	}
 
-	return $context.querySelector( selector );
+	const element = $context.querySelector( selector );
+
+	return element ? extend( element ) : null;
 };
 
 export const many = ( selector: string, $context: ParentNode = document ): Element[] | null => {
@@ -13,7 +15,7 @@ export const many = ( selector: string, $context: ParentNode = document ): Eleme
 
 	const elements = $context.querySelectorAll( selector );
 
-	return elements ? Array.from( elements ) : null;
+	return elements ? Array.from( elements ).map( element => extend( element ) ) : null;
 };
 
 export const extend = ( element: Element ): Element => {
