@@ -19,7 +19,7 @@
 	</p>
 
 	<script type="module">
-		import { one, many } from '../dist/scripts/index.mjs';
+		import { one, many, extend } from '../dist/scripts/index.mjs';
 
 		let $one = one( 'h1' );
 		let $many = many( 'p' );
@@ -40,10 +40,11 @@
 				'marginBottom': '1.5rem',
 				'padding': '20px',
 			});
+			extend( element );
 		} );
 
-		console.log( 'one', $one );
-		console.log( 'many', $many );
+		console.log( 'one', $one, $one.__genetiks__, extend( $one ).__genetiks__ );
+		console.log( 'many', $many, Object.values( $many ).map( p => p.__genetiks__ ) );
 	</script>
 </body>
 </html>

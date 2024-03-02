@@ -19,7 +19,12 @@ export const many = ( selector: string, $context: ParentNode = document ) => {
 };
 
 export const extend = ( element: Element ) => {
+	if ( '__genetiks__' in element ) {
+		return element;
+	}
+
 	return Object.assign( element, {
+		__genetiks__: performance.now(),
 		on: ( ...args: Parameters<typeof element.addEventListener> ) => {
 			args[ 0 ].split( ' ' ).forEach( ( eventName ) => {
 				args[ 0 ] = eventName;
