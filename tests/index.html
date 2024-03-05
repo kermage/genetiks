@@ -9,6 +9,8 @@
 <body>
 	<h1>Hello World!</h1>
 
+	<div id="target"></div>
+
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto asperiores aut beatae cum
 		debitis deserunt ducimus earum eveniet fugiat, ipsum libero neque quae sunt tempora ullam vel vitae.
 	</p>
@@ -19,7 +21,7 @@
 	</p>
 
 	<script type="module">
-		import { one, many, extend } from '../dist/scripts/index.mjs';
+		import { one, many, extend, create } from '../dist/scripts/index.mjs';
 
 		let $one = one( 'h1' );
 		let $many = many( 'p' );
@@ -45,6 +47,15 @@
 
 		console.log( 'one', $one, $one.__genetiks__, extend( $one ).__genetiks__ );
 		console.log( 'many', $many, Object.values( $many ).map( p => p.__genetiks__ ) );
+
+		let $target = one( '#target' );
+
+		$target.css( { backgroundColor: 'rgb(234,234,234)' } )
+		$target.append( document.createElement( 'ul' ) );
+		create( '<li>First</li><li>Second</li>' )
+			.forEach( function( element ) {
+				one( 'ul', $target ).append( element );
+			} );
 	</script>
 </body>
 </html>

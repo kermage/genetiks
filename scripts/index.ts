@@ -18,6 +18,18 @@ export const many = ( selector: string, $context: ParentNode = document ) => {
 	return elements ? Array.from( elements ).map( element => extend( element ) ) : null;
 };
 
+export const create = ( html: string ) => {
+	if ( ! html ) {
+		return null;
+	}
+
+	const template = document.createElement( 'template' );
+
+	template.innerHTML = html;
+
+	return Array.from( template.content.childNodes );
+}
+
 export const extend = ( element: Element ) => {
 	if ( '__genetiks__' in element ) {
 		return element;
