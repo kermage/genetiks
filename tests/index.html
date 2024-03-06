@@ -50,11 +50,15 @@
 
 		let $target = one( '#target' );
 
+		$target.on( 'child-added', function( event ) {
+			console.log( 'Child Added:', event.detail );
+		} );
 		$target.css( { backgroundColor: 'rgb(234,234,234)' } )
 		$target.append( document.createElement( 'ul' ) );
 		create( '<li>First</li><li>Second</li>' )
 			.forEach( function( element ) {
 				one( 'ul', $target ).append( element );
+				$target.trigger( 'child-added', element );
 			} );
 	</script>
 </body>

@@ -32,6 +32,13 @@ export const extend = ( element: Element ) => {
 				element.removeEventListener.apply( element, args );
 			} );
 		},
+		trigger: ( eventName: string, detail?: any ) => {
+			element.dispatchEvent( new CustomEvent( eventName, {
+				detail,
+				bubbles: true,
+				cancelable: true,
+			} ) );
+		},
 		attr: ( properties: Record<string, string> ) => {
 			Object.entries( properties ).forEach( value => {
 				element.setAttribute( ...value );
