@@ -7,7 +7,7 @@ export const create = ( html: string ) => {
 
 	template.innerHTML = html;
 
-	return template.content.childNodes;
+	return Array.from( template.content.childNodes );
 }
 
 
