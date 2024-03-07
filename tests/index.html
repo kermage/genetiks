@@ -9,7 +9,9 @@
 <body>
 	<h1>Hello World!</h1>
 
-	<div id="target"></div>
+	<div id="target">
+		<div><ul><li>TEST</li></ul></div>
+	</div>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto asperiores aut beatae cum
 		debitis deserunt ducimus earum eveniet fugiat, ipsum libero neque quae sunt tempora ullam vel vitae.
@@ -60,6 +62,7 @@
 				one( 'ul', $target ).append( element );
 				$target.trigger( 'child-added', element );
 			} );
+		console.log( many( 'ul', $target ), many( '> ul', $target ) );
 	</script>
 </body>
 </html>

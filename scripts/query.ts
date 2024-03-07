@@ -6,7 +6,7 @@ export const one = ( selector: string, $context: ParentNode = document ) => {
 		return null;
 	}
 
-	const element = $context.querySelector( selector );
+	const element = $context.querySelector( `:scope ${ selector }` );
 
 	return element ? extend( element ) : null;
 };
@@ -17,7 +17,7 @@ export const many = ( selector: string, $context: ParentNode = document ) => {
 		return null;
 	}
 
-	const elements = $context.querySelectorAll( selector );
+	const elements = $context.querySelectorAll( `:scope ${ selector }` );
 
 	return elements ? Array.from( elements ).map( element => extend( element ) ) : null;
 };
