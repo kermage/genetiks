@@ -2,7 +2,7 @@ import { extend } from './element';
 
 
 export const one = ( selector: string | Element | NodeListOf<Element> | Array<Element>, $context: ParentNode = document ) => {
-	if ( ! selector ) {
+	if ( ! selector || ! ( $context instanceof Node ) || ! [ 1, 9, 11 ].includes( $context.nodeType ) ) {
 		return null;
 	}
 
@@ -23,7 +23,7 @@ export const one = ( selector: string | Element | NodeListOf<Element> | Array<El
 
 
 export const many = ( selector: string | Element | NodeListOf<Element> | Array<Element>, $context: ParentNode = document ) => {
-	if ( ! selector ) {
+	if ( ! selector || ! ( $context instanceof Node ) || ! [ 1, 9, 11 ].includes( $context.nodeType ) ) {
 		return null;
 	}
 
