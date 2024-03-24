@@ -1,6 +1,6 @@
 {
   "name": "genetiks",
-  "version": "1.10.0",
+  "version": "2.0.0",
   "description": "A minimalist style sheet baseline to build upon",
   "keywords": [
     "sass",
@@ -16,6 +16,7 @@
     "config/",
     "dist/"
   ],
+  "type": "module",
   "main": "dist/scripts/index.cjs",
   "module": "dist/scripts/index.mjs",
   "types": "dist/scripts/index.d.ts",
@@ -36,8 +37,8 @@
   },
   "scripts": {
     "build:scripts": "unbuild",
-    "lint": "stylelint **/*.scss --formatter=verbose",
-    "fix": "stylelint **/*.scss --fix",
+    "lint": "stylelint '**/*.scss' --formatter=verbose",
+    "fix": "stylelint '**/*.scss' --fix",
     "sass": "sass styles/index.scss dist/styles/index.css",
     "postcss": "postcss dist/styles/index.css --replace",
     "build:styles": "npm run sass && npm run postcss",
