@@ -15,5 +15,5 @@
 ## Usage
 
 ```js
-import { one, many, extend } from 'genetiks';
+import { one, many, create, extend, delegate } from 'genetiks';
 ```
