@@ -17,13 +17,25 @@
     "dist/"
   ],
   "type": "module",
-  "main": "dist/scripts/index.cjs",
-  "module": "dist/scripts/index.mjs",
-  "types": "dist/scripts/index.d.ts",
   "style": "dist/styles/utilities/index.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/kermage/genetiks.git"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "style": "./dist/styles/utilities/index.scss",
+        "types": "./dist/scripts/index.d.mts",
+        "default": "./dist/scripts/index.mjs"
+      },
+      "require": {
+        "style": "./dist/styles/utilities/index.scss",
+        "types": "./dist/scripts/index.d.cts",
+        "default": "./dist/scripts/index.cjs"
+      }
+    },
+    "./config": "./config/index.js"
   },
   "dependencies": {
     "sass": "^1.86.0",
