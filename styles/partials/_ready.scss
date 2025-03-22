@@ -2,6 +2,11 @@
 // CSS-ready Styles
 // ==========================================================================
 
+@use '../utilities/breakpoints' as *;
+@use '../utilities/flexbox' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
 .container {
 	@include container;
 

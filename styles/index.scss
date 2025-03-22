@@ -27,8 +27,8 @@
 // ==================================================
 
 
-@import 'utilities';
-@import 'variables';
+@use 'utilities';
+@use 'variables';
 
 
 // Partials
@@ -39,20 +39,20 @@
 // @tailwind utilities;
 // @tailwind screens;
 // @import "./node_modules/normalize.css/normalize";
-@import 'partials/print';
-@import 'partials/global';
-@import 'partials/wordpress';
-@import 'partials/ready';
+@use 'partials/print';
+@use 'partials/global';
+@use 'partials/wordpress';
+@use 'partials/ready';
 
 
 // Base Styles
 // **************************************************
 
-@import 'base/typography';
-@import 'base/elements';
-@import 'base/form';
-@import 'base/fields';
-@import 'base/buttons';
+@use 'base/typography';
+@use 'base/elements';
+@use 'base/form';
+@use 'base/fields';
+@use 'base/buttons';
 
 
 // Layouts

@@ -2,6 +2,8 @@
 // Form Styles
 // ==========================================================================
 
+@use '../utilities/functions' as *;
+
 form {
 	margin: 0 0 $spacer;
 }

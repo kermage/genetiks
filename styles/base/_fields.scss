@@ -2,6 +2,8 @@
 // Fields Styles
 // ==========================================================================
 
+@use '../variables' as *;
+
 @each $input in $input-list {
 	#{$input} {
 		width: 100%;

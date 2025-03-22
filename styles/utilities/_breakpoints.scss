@@ -5,6 +5,7 @@
 @use 'sass:map';
 @use 'sass:math';
 @use 'sass:meta';
+@use 'functions' as *;
 
 $breakpoints: (
 	xxsmall: 0,

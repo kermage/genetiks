@@ -2,6 +2,11 @@
 // Typography
 // ==========================================================================
 
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/mui-colors' as *;
+@use '../variables' as *;
+
 h1,
 h2,
 h3,

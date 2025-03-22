@@ -16,9 +16,9 @@
 // ==================================================
 
 
-@import 'functions';
-@import 'mixins';
-@import 'breakpoints';
-@import 'flexbox';
-@import 'embeds';
-@import 'mui-colors';
+@forward 'functions';
+@forward 'mixins';
+@forward 'breakpoints';
+@forward 'flexbox';
+@forward 'embeds';
+@forward 'mui-colors';

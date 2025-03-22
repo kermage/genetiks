@@ -2,6 +2,8 @@
 // Elements Styles
 // ==========================================================================
 
+@use '../utilities/functions' as *;
+
 img {
 	// Automatically scale height and adhere to container width
 	height: auto;

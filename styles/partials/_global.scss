@@ -3,6 +3,10 @@
 // ==========================================================================
 
 @use 'sass:math';
+@use '../utilities/breakpoints' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+@use '../variables' as *;
 
 *,
 *::before,

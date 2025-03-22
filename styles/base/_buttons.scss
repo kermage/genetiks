@@ -2,6 +2,8 @@
 // Buttons Styles
 // ==========================================================================
 
+@use '../variables' as *;
+
 @each $button in $button-list {
 	#{$button} {
 		display: inline-block;
