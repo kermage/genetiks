@@ -32,6 +32,23 @@ export const extend = ( element: Element ) => {
 				element.removeEventListener.apply( element, args );
 			} );
 		},
+		reset: () => element.parentNode?.replaceChild( element.cloneNode( true ), element ),
+		wrap: ( wrapper: string ) => {
+			const $wrapper = create( wrapper )?.find((node) => node.firstChild) as Element | null;
+
+			if ( ! $wrapper ) {
+				return;
+			}
+
+			let $inner = $wrapper.firstElementChild || $wrapper;
+
+			while ( $inner.firstElementChild ) {
+				$inner = $inner.firstElementChild;
+			}
+
+			element.before( $wrapper );
+			$inner.appendChild( element );
+		},
 		trigger: ( eventName: string, detail?: any ) => {
 			element.dispatchEvent( new CustomEvent( eventName, {
 				detail,

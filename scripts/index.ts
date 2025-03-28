@@ -24,4 +24,8 @@ export const delegate = ( event: string, selector: string, callback: Function ) 
 	delegates.get( event )!.set( selector, callback );
 }
 
+export const sleep = ( ms: number ) => new Promise( resolve => setTimeout( resolve, ms ) );
+
+export const tick = () => new Promise( resolve => requestAnimationFrame( resolve ) );
+
 export { one, many, extend, create }
