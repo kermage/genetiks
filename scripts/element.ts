@@ -11,7 +11,7 @@ export const create = ( html: string ) => {
 }
 
 
-export const extend = ( element: Element ) => {
+export const extend = ( element: Element | ExtendedElement ): ExtendedElement => {
 	if ( '__genetiks__' in element ) {
 		return element;
 	}
@@ -66,3 +66,15 @@ export const extend = ( element: Element ) => {
 		}
 	} );
 };
+
+
+export interface ExtendedElement extends Element {
+	__genetiks__: DOMHighResTimeStamp;
+	on: ( ...args: Parameters<Element['addEventListener']> ) => void;
+	off: ( ...args: Parameters<Element['removeEventListener']> ) => void;
+	reset: () => void;
+	wrap: ( wrapper: string ) => void;
+	trigger: ( eventName: string, detail?: any ) => void;
+	attr: ( properties: Record<string, string> ) => void;
+	css: ( properties: Record<string, string> ) => void;
+}

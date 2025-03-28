@@ -29,3 +29,6 @@ export const sleep = ( ms: number ) => new Promise( resolve => setTimeout( resol
 export const tick = () => new Promise( resolve => requestAnimationFrame( resolve ) );
 
 export { one, many, extend, create }
+
+
+export type { ExtendedElement } from './element';
